@@ -1,5 +1,6 @@
 package coffeecatteam.microtrains.proxy;
 
+import coffeecatteam.microtrains.init.RegistrationHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -7,7 +8,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 public class ProxyCommon {
 
 	public void preInit(FMLPreInitializationEvent event) {
-
+        RegistrationHandler.init();
 	}
 
 	public void init(FMLInitializationEvent event) {
