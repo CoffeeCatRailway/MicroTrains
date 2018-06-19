@@ -1,6 +1,6 @@
 package coffeecatteam.microtrains.objects.blocks;
 
-import net.minecraft.block.Block;
+import coffeecatteam.microtrains.MicroTrains;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
@@ -8,45 +8,22 @@ import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 
-import java.util.Random;
-
-public class BlockTable extends Block {
+public class BlockTable extends BlockBase {
 
     public static final PropertyBool BACK = PropertyBool.create("back");
     public static final PropertyBool FORWARD = PropertyBool.create("forward");
     public static final PropertyBool LEFT = PropertyBool.create("left");
     public static final PropertyBool RIGHT = PropertyBool.create("right");
 
-    public BlockTable(String name, float hardness, float resistance, Material material, CreativeTabs tab) {
-        super(material);
-        setUnlocalizedName(name);
-        setRegistryName(name);
-        setHardness(hardness);
-        setResistance(resistance);
-        setCreativeTab(tab);
+    public BlockTable(String name) {
+        super(name, 1.0F, 1.5F, Material.ROCK, MicroTrains.MICROTAB);
         this.setDefaultState(this.blockState.getBaseState().withProperty(BACK, false).withProperty(FORWARD, false).withProperty(LEFT, false).withProperty(RIGHT, false));
-    }
-
-    @Override
-    public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-        return Item.getItemFromBlock(this);
-    }
-
-    @Override
-    public boolean isOpaqueCube(IBlockState state) {
-        return false;
-    }
-
-    @Override
-    public boolean isFullCube(IBlockState state) {
-        return false;
     }
 
     @Override
