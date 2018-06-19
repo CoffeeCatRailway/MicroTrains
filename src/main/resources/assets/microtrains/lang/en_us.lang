@@ -2,6 +2,7 @@
 
 # Blocks
 tile.table.name=Micro Rail Table
+tile.controller.name=Micro Rail Controller
 
 # Other
 itemGroup.microtab=Micro Trains

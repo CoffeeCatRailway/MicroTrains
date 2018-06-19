@@ -1,0 +1,8 @@
+{
+  "variants": {
+    "facing=north": { "model": "microtrains:controller", "y": 180 },
+    "facing=south": { "model": "microtrains:controller" },
+    "facing=west":  { "model": "microtrains:controller", "y": 90 },
+    "facing=east":  { "model": "microtrains:controller", "y": 270 }
+  }
+}

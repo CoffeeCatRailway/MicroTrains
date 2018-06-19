@@ -1,19 +1,20 @@
 package coffeecatteam.microtrains.init;
 
-import coffeecatteam.microtrains.MicroTrains;
+import coffeecatteam.microtrains.objects.blocks.BlockController;
 import coffeecatteam.microtrains.objects.blocks.BlockTable;
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemSlab;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
 public class InitBlock {
 
-    public static final Block TABLE = new BlockTable("table", 1.0F, 1.5F, Material.ROCK, MicroTrains.MICROTAB);
+    public static final Block TABLE = new BlockTable("table");
+    public static final Block CONTROLLER = new BlockController("controller");
 
 	public static void init() {
         register(TABLE);
+        register(CONTROLLER);
 	}
 
     private static void register(Block... blocks) {
