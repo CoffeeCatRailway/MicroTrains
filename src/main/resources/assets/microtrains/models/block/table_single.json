@@ -1,13 +1,6 @@
 {
+  "parent": "microtrains:block/table_share",
   "source": "[120, -38, 99, 98, 17, -56, -51, -52, 75, 77, 46, 74, 76, 43, 81, 53, 118, 76, -52, 44, -78, 103, 80, 69, 22, -55, -55, 79, -73, 79, -84, -56, 44, -74, -51, -53, -49, 75, 85, 43, 75, 44, -54, 76, -52, 43, -79, -51, 79, -52, 102, -112, 69, 86, -106, 94, -108, 88, 92, 108, 95, -100, -105, 95, 94, 105, -101, -106, -104, 83, -100, -54, -96, -120, 44, -99, -100, -97, -105, 92, -108, 90, -110, 106, -97, -100, -97, -109, 95, 100, 91, -100, -103, 83, -106, 90, -60, -64, -48, -64, -15, -127, -127, -127, 31, 31, -2, -61, -64, 96, 15, -62, -1, 25, 24, -2, -1, 63, -64, -4, 31, 29, 28, 96, 96, 96, -58, -121, 127, -83, 90, -75, 26, -120, -41, -61, -52, 56, 112, -128, 25, 108, -56, -43, -48, -48, 112, -112, 60, 3, 1, -16, -128, -127, -127, 27, -124, 97, 110, 57, 124, -128, -7, 48, 41, -6, 21, 24, 24, 56, 64, 24, -92, 22, 100, -58, 121, 6, -122, -49, -28, -24, 7, -79, 65, -22, -63, -2, 32, 83, 63, -52, -116, 81, -3, 3, -93, -97, -110, -8, 35, 55, -3, 96, 73, -65, -1, -111, -11, 19, -111, 127, -42, -65, 66, -51, 63, 40, -6, 41, -51, -65, 0, 18, -75, 9, -126]",
-  "textures": {
-    "254813040": "minecraft:blocks/grass_top",
-    "2089141201": "minecraft:blocks/grass_side_overlay",
-    "1258797299": "minecraft:blocks/dirt",
-    "948488": "minecraft:blocks/concrete_silver",
-    "406559004": "minecraft:blocks/log_oak",
-    "1874860491": "minecraft:blocks/grass_side"
-  },
   "elements": [
     {
       "from": [
@@ -28,7 +21,7 @@
             15,
             15
           ],
-          "texture": "#254813040"
+          "texture": "#track_bed_top"
         }
       }
     },
@@ -51,7 +44,7 @@
             15,
             2
           ],
-          "texture": "#2089141201"
+          "texture": "#track_bed_side1"
         }
       }
     },
@@ -74,7 +67,7 @@
             15,
             2
           ],
-          "texture": "#2089141201"
+          "texture": "#track_bed_side1"
         }
       }
     },
@@ -97,7 +90,7 @@
             15,
             2
           ],
-          "texture": "#2089141201"
+          "texture": "#track_bed_side1"
         }
       }
     },
@@ -120,7 +113,7 @@
             15,
             2
           ],
-          "texture": "#2089141201"
+          "texture": "#track_bed_side1"
         }
       }
     },
@@ -143,7 +136,7 @@
             15,
             15
           ],
-          "texture": "#1258797299"
+          "texture": "#track_bed_bottom"
         }
       }
     },
@@ -166,7 +159,7 @@
             2,
             16
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "down"
         }
       }
@@ -190,7 +183,7 @@
             16,
             16
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "down"
         }
       }
@@ -214,7 +207,7 @@
             1,
             15
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "down"
         }
       }
@@ -238,7 +231,7 @@
             16,
             15
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "down"
         }
       }
@@ -262,7 +255,7 @@
             1,
             2
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "down"
         }
       }
@@ -286,7 +279,7 @@
             16,
             2
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "down"
         }
       }
@@ -310,7 +303,7 @@
             2,
             1
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "down"
         }
       }
@@ -334,7 +327,7 @@
             16,
             1
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "down"
         }
       }
@@ -358,7 +351,7 @@
             16,
             1
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "up"
         }
       }
@@ -382,7 +375,7 @@
             1,
             15
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "up"
         }
       }
@@ -406,7 +399,7 @@
             16,
             15
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "up"
         }
       }
@@ -430,7 +423,7 @@
             16,
             16
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "up"
         }
       }
@@ -454,7 +447,7 @@
             16,
             16
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "north"
         }
       }
@@ -478,7 +471,7 @@
             2,
             16
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "north"
         }
       }
@@ -502,7 +495,7 @@
             16,
             4
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "north"
         }
       }
@@ -526,7 +519,7 @@
             16,
             6
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "north"
         }
       }
@@ -550,7 +543,7 @@
             4,
             6
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "north"
         }
       }
@@ -574,7 +567,7 @@
             3,
             8
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "north"
         }
       }
@@ -598,7 +591,7 @@
             16,
             5
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "north"
         }
       }
@@ -622,7 +615,7 @@
             16,
             8
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "north"
         }
       }
@@ -646,7 +639,7 @@
             5,
             5
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "north"
         }
       }
@@ -670,7 +663,7 @@
             2,
             16
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "south"
         }
       }
@@ -694,7 +687,7 @@
             16,
             16
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "south"
         }
       }
@@ -718,7 +711,7 @@
             16,
             4
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "south"
         }
       }
@@ -742,7 +735,7 @@
             4,
             6
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "south"
         }
       }
@@ -766,7 +759,7 @@
             16,
             6
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "south"
         }
       }
@@ -790,7 +783,7 @@
             16,
             8
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "south"
         }
       }
@@ -814,7 +807,7 @@
             5,
             5
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "south"
         }
       }
@@ -838,7 +831,7 @@
             3,
             8
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "south"
         }
       }
@@ -862,7 +855,7 @@
             16,
             5
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "south"
         }
       }
@@ -886,7 +879,7 @@
             2,
             16
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "west"
         }
       }
@@ -910,7 +903,7 @@
             16,
             16
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "west"
         }
       }
@@ -934,7 +927,7 @@
             3,
             8
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "west"
         }
       }
@@ -958,7 +951,7 @@
             4,
             6
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "west"
         }
       }
@@ -982,7 +975,7 @@
             5,
             5
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "west"
         }
       }
@@ -1006,7 +999,7 @@
             11,
             4
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "west"
         }
       }
@@ -1030,7 +1023,7 @@
             14,
             8
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "west"
         }
       }
@@ -1054,7 +1047,7 @@
             13,
             6
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "west"
         }
       }
@@ -1078,7 +1071,7 @@
             12,
             5
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "west"
         }
       }
@@ -1102,7 +1095,7 @@
             16,
             16
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "east"
         }
       }
@@ -1126,7 +1119,7 @@
             2,
             16
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "east"
         }
       }
@@ -1150,7 +1143,7 @@
             14,
             8
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "east"
         }
       }
@@ -1174,7 +1167,7 @@
             13,
             6
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "east"
         }
       }
@@ -1198,7 +1191,7 @@
             12,
             5
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "east"
         }
       }
@@ -1222,7 +1215,7 @@
             11,
             4
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "east"
         }
       }
@@ -1246,7 +1239,7 @@
             3,
             8
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "east"
         }
       }
@@ -1270,7 +1263,7 @@
             4,
             6
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "east"
         }
       }
@@ -1294,7 +1287,7 @@
             5,
             5
           ],
-          "texture": "#948488",
+          "texture": "#table_side",
           "cullface": "east"
         }
       }
@@ -1318,7 +1311,7 @@
             15,
             16
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -1341,7 +1334,7 @@
             15,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -1364,7 +1357,7 @@
             15,
             2
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -1387,7 +1380,7 @@
             5,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -1410,7 +1403,7 @@
             11,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -1433,7 +1426,7 @@
             13,
             6
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -1456,7 +1449,7 @@
             2,
             16
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -1479,7 +1472,7 @@
             4,
             6
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -1502,7 +1495,7 @@
             12,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -1525,7 +1518,7 @@
             4,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -1548,7 +1541,7 @@
             16,
             16
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -1571,7 +1564,7 @@
             14,
             6
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -1594,7 +1587,7 @@
             1,
             16
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -1617,7 +1610,7 @@
             13,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -1640,7 +1633,7 @@
             3,
             6
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -1663,7 +1656,7 @@
             4,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -1686,7 +1679,7 @@
             16,
             8
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -1709,7 +1702,7 @@
             15,
             6
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -1732,7 +1725,7 @@
             14,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -1755,7 +1748,7 @@
             12,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -1778,7 +1771,7 @@
             5,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -1801,7 +1794,7 @@
             3,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -1824,7 +1817,7 @@
             2,
             6
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -1847,7 +1840,7 @@
             1,
             8
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -1870,7 +1863,7 @@
             16,
             6
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -1893,7 +1886,7 @@
             15,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -1916,7 +1909,7 @@
             13,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -1939,7 +1932,7 @@
             4,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -1962,7 +1955,7 @@
             2,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -1985,7 +1978,7 @@
             1,
             6
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2008,7 +2001,7 @@
             16,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2031,7 +2024,7 @@
             15,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2054,7 +2047,7 @@
             1,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2077,7 +2070,7 @@
             3,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2100,7 +2093,7 @@
             15,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2123,7 +2116,7 @@
             2,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2146,7 +2139,7 @@
             14,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2169,7 +2162,7 @@
             3,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2192,7 +2185,7 @@
             13,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2215,7 +2208,7 @@
             4,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2238,7 +2231,7 @@
             4,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2261,7 +2254,7 @@
             13,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2284,7 +2277,7 @@
             3,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2307,7 +2300,7 @@
             2,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2330,7 +2323,7 @@
             1,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2353,7 +2346,7 @@
             3,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2376,7 +2369,7 @@
             16,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2399,7 +2392,7 @@
             15,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2422,7 +2415,7 @@
             1,
             6
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2445,7 +2438,7 @@
             2,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2468,7 +2461,7 @@
             4,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2491,7 +2484,7 @@
             13,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2514,7 +2507,7 @@
             15,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2537,7 +2530,7 @@
             16,
             6
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2560,7 +2553,7 @@
             1,
             8
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2583,7 +2576,7 @@
             2,
             6
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2606,7 +2599,7 @@
             3,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2629,7 +2622,7 @@
             5,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2652,7 +2645,7 @@
             12,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2675,7 +2668,7 @@
             14,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2698,7 +2691,7 @@
             15,
             6
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2721,7 +2714,7 @@
             16,
             8
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2744,7 +2737,7 @@
             1,
             16
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2767,7 +2760,7 @@
             3,
             6
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2790,7 +2783,7 @@
             16,
             16
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2813,7 +2806,7 @@
             4,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2836,7 +2829,7 @@
             14,
             6
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2859,7 +2852,7 @@
             13,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2882,7 +2875,7 @@
             2,
             16
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2905,7 +2898,7 @@
             4,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2928,7 +2921,7 @@
             15,
             2
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2951,7 +2944,7 @@
             11,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2974,7 +2967,7 @@
             15,
             16
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -2997,7 +2990,7 @@
             4,
             6
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -3020,7 +3013,7 @@
             15,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -3043,7 +3036,7 @@
             13,
             6
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -3066,7 +3059,7 @@
             5,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -3089,7 +3082,7 @@
             12,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -3112,7 +3105,7 @@
             4,
             2
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -3135,7 +3128,7 @@
             15,
             2
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -3158,7 +3151,7 @@
             3,
             3
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -3181,7 +3174,7 @@
             15,
             3
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -3204,7 +3197,7 @@
             2,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -3227,7 +3220,7 @@
             15,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -3250,7 +3243,7 @@
             2,
             13
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -3273,7 +3266,7 @@
             15,
             13
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -3296,7 +3289,7 @@
             15,
             14
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -3319,7 +3312,7 @@
             15,
             15
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -3342,7 +3335,7 @@
             15,
             15
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -3365,7 +3358,7 @@
             3,
             16
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -3388,7 +3381,7 @@
             14,
             16
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -3411,7 +3404,7 @@
             15,
             15
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -3434,7 +3427,7 @@
             1,
             14
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -3457,7 +3450,7 @@
             16,
             14
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -3480,7 +3473,7 @@
             14,
             1
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -3503,7 +3496,7 @@
             2,
             2
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -3526,7 +3519,7 @@
             3,
             1
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -3549,7 +3542,7 @@
             1,
             3
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -3572,7 +3565,7 @@
             15,
             2
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -3595,7 +3588,7 @@
             16,
             3
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -3618,7 +3611,7 @@
             4,
             16
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -3641,7 +3634,7 @@
             13,
             16
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -3664,7 +3657,7 @@
             1,
             13
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -3687,7 +3680,7 @@
             16,
             13
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -3710,7 +3703,7 @@
             1,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -3733,7 +3726,7 @@
             16,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -3756,7 +3749,7 @@
             4,
             1
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -3779,7 +3772,7 @@
             13,
             1
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -3802,7 +3795,7 @@
             5,
             16
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -3825,7 +3818,7 @@
             12,
             16
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -3848,7 +3841,7 @@
             4,
             15
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -3871,7 +3864,7 @@
             13,
             15
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -3894,7 +3887,7 @@
             3,
             14
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -3917,7 +3910,7 @@
             14,
             14
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -3940,7 +3933,7 @@
             2,
             13
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -3963,7 +3956,7 @@
             15,
             13
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -3986,7 +3979,7 @@
             1,
             12
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4009,7 +4002,7 @@
             16,
             12
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4032,7 +4025,7 @@
             1,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4055,7 +4048,7 @@
             16,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4078,7 +4071,7 @@
             2,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4101,7 +4094,7 @@
             15,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4124,7 +4117,7 @@
             3,
             3
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4147,7 +4140,7 @@
             14,
             3
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4170,7 +4163,7 @@
             4,
             2
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4193,7 +4186,7 @@
             13,
             2
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4216,7 +4209,7 @@
             5,
             1
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4239,7 +4232,7 @@
             12,
             1
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4262,7 +4255,7 @@
             11,
             16
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4285,7 +4278,7 @@
             5,
             15
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4308,7 +4301,7 @@
             12,
             15
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4331,7 +4324,7 @@
             5,
             14
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4354,7 +4347,7 @@
             13,
             14
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4377,7 +4370,7 @@
             4,
             13
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4400,7 +4393,7 @@
             14,
             13
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4423,7 +4416,7 @@
             3,
             12
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4446,7 +4439,7 @@
             15,
             12
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4469,7 +4462,7 @@
             1,
             11
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4492,7 +4485,7 @@
             16,
             11
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4515,7 +4508,7 @@
             11,
             1
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4538,7 +4531,7 @@
             14,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4561,7 +4554,7 @@
             12,
             2
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4584,7 +4577,7 @@
             4,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4607,7 +4600,7 @@
             5,
             2
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4630,7 +4623,7 @@
             15,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4653,7 +4646,7 @@
             13,
             3
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4676,7 +4669,7 @@
             3,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4699,7 +4692,7 @@
             5,
             3
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4722,7 +4715,7 @@
             4,
             15
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4745,7 +4738,7 @@
             11,
             15
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4768,7 +4761,7 @@
             15,
             15
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4791,7 +4784,7 @@
             3,
             14
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4814,7 +4807,7 @@
             15,
             2
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4837,7 +4830,7 @@
             15,
             14
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4860,7 +4853,7 @@
             2,
             13
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4883,7 +4876,7 @@
             12,
             13
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4906,7 +4899,7 @@
             15,
             13
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4929,7 +4922,7 @@
             13,
             12
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4952,7 +4945,7 @@
             15,
             11
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4975,7 +4968,7 @@
             11,
             3
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -4998,7 +4991,7 @@
             15,
             3
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -5021,7 +5014,7 @@
             2,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -5044,7 +5037,7 @@
             15,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -5067,7 +5060,7 @@
             12,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -5090,7 +5083,7 @@
             13,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -5113,7 +5106,7 @@
             2,
             16
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -5136,7 +5129,7 @@
             15,
             16
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -5159,7 +5152,7 @@
             15,
             2
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -5182,7 +5175,7 @@
             13,
             6
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -5205,7 +5198,7 @@
             4,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -5228,7 +5221,7 @@
             4,
             6
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -5251,7 +5244,7 @@
             15,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -5274,7 +5267,7 @@
             12,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -5297,7 +5290,7 @@
             11,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -5320,7 +5313,7 @@
             5,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -5343,7 +5336,7 @@
             1,
             16
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -5366,7 +5359,7 @@
             16,
             16
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -5389,7 +5382,7 @@
             13,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -5412,7 +5405,7 @@
             3,
             6
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -5435,7 +5428,7 @@
             4,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -5458,7 +5451,7 @@
             14,
             6
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -5481,7 +5474,7 @@
             1,
             8
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -5504,7 +5497,7 @@
             16,
             8
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -5527,7 +5520,7 @@
             12,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -5550,7 +5543,7 @@
             5,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -5573,7 +5566,7 @@
             2,
             6
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -5596,7 +5589,7 @@
             15,
             6
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -5619,7 +5612,7 @@
             3,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -5642,7 +5635,7 @@
             14,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -5665,7 +5658,7 @@
             1,
             6
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -5688,7 +5681,7 @@
             16,
             6
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -5711,7 +5704,7 @@
             2,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -5734,7 +5727,7 @@
             15,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -5757,7 +5750,7 @@
             4,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -5780,7 +5773,7 @@
             13,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -5803,7 +5796,7 @@
             1,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -5826,7 +5819,7 @@
             16,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -5849,7 +5842,7 @@
             3,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -5872,7 +5865,7 @@
             15,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -5895,7 +5888,7 @@
             2,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -5918,7 +5911,7 @@
             15,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -5941,7 +5934,7 @@
             14,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -5964,7 +5957,7 @@
             13,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -5987,7 +5980,7 @@
             13,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -6010,7 +6003,7 @@
             4,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -6033,7 +6026,7 @@
             14,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -6056,7 +6049,7 @@
             3,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -6079,7 +6072,7 @@
             15,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -6102,7 +6095,7 @@
             2,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -6125,7 +6118,7 @@
             16,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -6148,7 +6141,7 @@
             1,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -6171,7 +6164,7 @@
             15,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -6194,7 +6187,7 @@
             3,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -6217,7 +6210,7 @@
             16,
             6
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -6240,7 +6233,7 @@
             1,
             6
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -6263,7 +6256,7 @@
             15,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -6286,7 +6279,7 @@
             2,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -6309,7 +6302,7 @@
             13,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -6332,7 +6325,7 @@
             4,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -6355,7 +6348,7 @@
             16,
             8
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -6378,7 +6371,7 @@
             1,
             8
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -6401,7 +6394,7 @@
             5,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -6424,7 +6417,7 @@
             12,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -6447,7 +6440,7 @@
             15,
             6
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -6470,7 +6463,7 @@
             2,
             6
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -6493,7 +6486,7 @@
             14,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -6516,7 +6509,7 @@
             3,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -6539,7 +6532,7 @@
             15,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -6562,7 +6555,7 @@
             16,
             16
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -6585,7 +6578,7 @@
             1,
             16
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -6608,7 +6601,7 @@
             4,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -6631,7 +6624,7 @@
             14,
             6
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -6654,7 +6647,7 @@
             13,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -6677,7 +6670,7 @@
             3,
             6
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -6700,7 +6693,7 @@
             15,
             16
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -6723,7 +6716,7 @@
             2,
             16
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -6746,7 +6739,7 @@
             15,
             2
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -6769,7 +6762,7 @@
             13,
             6
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -6792,7 +6785,7 @@
             12,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -6815,7 +6808,7 @@
             5,
             5
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -6838,7 +6831,7 @@
             4,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -6861,7 +6854,7 @@
             4,
             6
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -6884,7 +6877,7 @@
             11,
             4
           ],
-          "texture": "#948488"
+          "texture": "#table_side"
         }
       }
     },
@@ -6907,7 +6900,7 @@
             14,
             8
           ],
-          "texture": "#406559004"
+          "texture": "#support_beam"
         }
       }
     },
@@ -6930,7 +6923,7 @@
             13,
             8
           ],
-          "texture": "#406559004"
+          "texture": "#support_beam"
         }
       }
     },
@@ -6953,7 +6946,7 @@
             13,
             8
           ],
-          "texture": "#406559004"
+          "texture": "#support_beam"
         }
       }
     },
@@ -6976,7 +6969,7 @@
             14,
             8
           ],
-          "texture": "#406559004"
+          "texture": "#support_beam"
         }
       }
     },
@@ -6999,7 +6992,7 @@
             13,
             2
           ],
-          "texture": "#406559004"
+          "texture": "#support_beam"
         }
       }
     },
@@ -7022,7 +7015,7 @@
             2,
             13
           ],
-          "texture": "#406559004"
+          "texture": "#support_beam"
         }
       }
     },
@@ -7045,7 +7038,7 @@
             15,
             13
           ],
-          "texture": "#406559004"
+          "texture": "#support_beam"
         }
       }
     },
@@ -7068,7 +7061,7 @@
             13,
             15
           ],
-          "texture": "#406559004"
+          "texture": "#support_beam"
         }
       }
     },
@@ -7091,7 +7084,7 @@
             14,
             15
           ],
-          "texture": "#406559004"
+          "texture": "#support_beam"
         }
       }
     },
@@ -7114,7 +7107,7 @@
             2,
             14
           ],
-          "texture": "#406559004"
+          "texture": "#support_beam"
         }
       }
     },
@@ -7137,7 +7130,7 @@
             15,
             14
           ],
-          "texture": "#406559004"
+          "texture": "#support_beam"
         }
       }
     },
@@ -7160,7 +7153,7 @@
             14,
             2
           ],
-          "texture": "#406559004"
+          "texture": "#support_beam"
         }
       }
     },
@@ -7183,7 +7176,7 @@
             14,
             8
           ],
-          "texture": "#406559004"
+          "texture": "#support_beam"
         }
       }
     },
@@ -7206,7 +7199,7 @@
             13,
             8
           ],
-          "texture": "#406559004"
+          "texture": "#support_beam"
         }
       }
     },
@@ -7229,7 +7222,7 @@
             13,
             8
           ],
-          "texture": "#406559004"
+          "texture": "#support_beam"
         }
       }
     },
@@ -7252,7 +7245,7 @@
             14,
             8
           ],
-          "texture": "#406559004"
+          "texture": "#support_beam"
         }
       }
     },
@@ -7275,7 +7268,7 @@
             15,
             2
           ],
-          "texture": "#1874860491"
+          "texture": "#track_bed_side2"
         }
       }
     },
@@ -7298,7 +7291,7 @@
             15,
             2
           ],
-          "texture": "#1874860491"
+          "texture": "#track_bed_side2"
         }
       }
     },
@@ -7321,7 +7314,7 @@
             15,
             2
           ],
-          "texture": "#1874860491"
+          "texture": "#track_bed_side2"
         }
       }
     },
@@ -7344,7 +7337,7 @@
             15,
             2
           ],
-          "texture": "#1874860491"
+          "texture": "#track_bed_side2"
         }
       }
     }
