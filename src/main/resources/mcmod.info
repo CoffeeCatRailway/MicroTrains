@@ -2,7 +2,7 @@
 {
   "modid": "microtrains",
   "name": "Micro Trains",
-  "description": "Example placeholder mod.",
+  "description": "Adds miniature trains that you can control into minecraft!",
   "version": "0.1",
   "mcversion": "${mcversion}",
   "url": "",
