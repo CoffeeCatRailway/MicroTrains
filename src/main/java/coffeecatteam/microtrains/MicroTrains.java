@@ -21,6 +21,9 @@ public class MicroTrains {
 
     public static Logger logger = Utils.getLogger();
 
+    @Mod.Instance
+    public static MicroTrains instance;
+
     @SidedProxy(clientSide = Reference.CLIENTPROXY, serverSide = Reference.COMMONPROXY)
     private static ProxyCommon proxy;
 

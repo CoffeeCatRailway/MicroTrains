@@ -1,5 +1,6 @@
 package coffeecatteam.microtrains.init;
 
+import coffeecatteam.microtrains.objects.blocks.BlockCoalGenerator;
 import coffeecatteam.microtrains.objects.blocks.BlockController;
 import coffeecatteam.microtrains.objects.blocks.BlockTable;
 import net.minecraft.block.Block;
@@ -12,9 +13,13 @@ public class InitBlock {
     public static final Block TABLE = new BlockTable("table");
     public static final Block CONTROLLER = new BlockController("controller");
 
+    public static final Block COAL_GENERATOR = new BlockCoalGenerator("coal_generator");
+
 	public static void init() {
         register(TABLE);
         register(CONTROLLER);
+
+        register(COAL_GENERATOR);
 	}
 
     private static void register(Block... blocks) {

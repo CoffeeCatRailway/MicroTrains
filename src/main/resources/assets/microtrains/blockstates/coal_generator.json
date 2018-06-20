@@ -1,0 +1,8 @@
+{
+  "variants": {
+      "facing=north": { "model": "microtrains:coal_generator", "y": 180 },
+      "facing=south": { "model": "microtrains:coal_generator" },
+      "facing=west":  { "model": "microtrains:coal_generator", "y": 90 },
+      "facing=east":  { "model": "microtrains:coal_generator", "y": 270 }
+  }
+}

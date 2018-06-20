@@ -1,12 +1,12 @@
 package coffeecatteam.microtrains.objects.blocks;
 
 import coffeecatteam.microtrains.MicroTrains;
+import coffeecatteam.microtrains.objects.blocks.base.BlockBase;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
