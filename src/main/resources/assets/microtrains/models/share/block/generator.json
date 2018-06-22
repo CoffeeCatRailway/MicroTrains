@@ -1,5 +1,5 @@
 {
-  "parent": "microtrains:block/shares/display",
+  "parent": "microtrains:share/display",
   "textures": {
     "particle": "minecraft:blocks/concrete_gray",
     "power_out1": "minecraft:blocks/concrete_powder_orange",
