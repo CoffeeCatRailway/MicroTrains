@@ -72,6 +72,7 @@ public class RegistrationHandler {
 
     public static void init() {
         InitBlock.init();
+        InitBlock.registerTileEntities();
         InitItem.init();
     }
 }

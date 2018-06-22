@@ -1,12 +1,15 @@
 package coffeecatteam.microtrains.init;
 
+import coffeecatteam.microtrains.Reference;
 import coffeecatteam.microtrains.objects.blocks.BlockCoalGenerator;
 import coffeecatteam.microtrains.objects.blocks.BlockController;
 import coffeecatteam.microtrains.objects.blocks.BlockTable;
+import coffeecatteam.microtrains.objects.tileentity.TileCoalGenerator;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemSlab;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
 public class InitBlock {
 
@@ -21,6 +24,10 @@ public class InitBlock {
 
         register(COAL_GENERATOR);
 	}
+
+	public static void registerTileEntities() {
+        GameRegistry.registerTileEntity(TileCoalGenerator.class, Reference.MODID+":coal_generator");
+    }
 
     private static void register(Block... blocks) {
         for (Block block : blocks)

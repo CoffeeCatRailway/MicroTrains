@@ -39,11 +39,6 @@ public class BlockBase extends Block {
     }
 
     @Override
-    public Item getItemDropped(IBlockState state, Random rand, int fortune) {
-        return Item.getItemFromBlock(this);
-    }
-
-    @Override
     public boolean isOpaqueCube(IBlockState state) {
         return false;
     }
