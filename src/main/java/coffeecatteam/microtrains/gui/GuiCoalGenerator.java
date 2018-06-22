@@ -10,16 +10,19 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @SideOnly(Side.CLIENT)
 public class GuiCoalGenerator extends GuiContainer {
 
     private IInventory inventory;
-    private TileCoalGenerator tileentity;
+    private TileCoalGenerator generator;
 
-    public GuiCoalGenerator(IInventory inventory, TileCoalGenerator tileentity) {
-        super(new ContainerCoalGenerator(inventory, tileentity));
+    public GuiCoalGenerator(IInventory inventory, TileCoalGenerator generator) {
+        super(new ContainerCoalGenerator(inventory, generator));
         this.inventory = inventory;
-        this.tileentity = tileentity;
+        this.generator = generator;
 
         this.xSize = 176;
         this.ySize = 166;
@@ -41,8 +44,23 @@ public class GuiCoalGenerator extends GuiContainer {
 
     @Override
     protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
-        String teName = tileentity.getDisplayName().getUnformattedText();
+        String teName = generator.getDisplayName().getUnformattedText();
         fontRenderer.drawString(teName, 8, 6, 0x040404);
         fontRenderer.drawString(inventory.getDisplayName().getUnformattedText(), 8, 72, 0x040404);
+
+//        this.mc.getTextureManager().bindTexture(new ResourceLocation(Reference.MODID, "textures/gui/container/coal_generator.png"));
+//        this.drawTexturedModalRect(84, 26, 180, 176, 14, 38 - getProgressLevel(38));
+//
+//        if(mouseX >= 84 && mouseX <= 119 && mouseY >= 26 && mouseY <= 63) {
+//            List<String> text = new ArrayList<>();
+//            text.add(generator.getField(0) + "RF / " + generator.getField(1) + "RF");
+//            this.drawHoveringText(text, mouseX, mouseY);
+//        }
     }
+
+//    private int getProgressLevel(int progressIndicatorPixelHeight) {
+//        int rf = generator.getField(0);
+//        int maxRF = generator.getField(1);
+//        return maxRF != 0 && rf != 0 ? (rf * progressIndicatorPixelHeight) / maxRF : 0;
+//    }
 }
