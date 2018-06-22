@@ -1,0 +1,12 @@
+{
+  "parent": "microtrains:block/shares/display",
+  "textures": {
+      "particle": "minecraft:blocks/concrete_silver",
+      "track_bed_top": "minecraft:blocks/concrete_powder_green",
+      "track_bed_side1": "minecraft:blocks/grass_side_overlay",
+      "track_bed_side2": "minecraft:blocks/grass_side",
+      "track_bed_bottom": "minecraft:blocks/dirt",
+      "table_side": "minecraft:blocks/concrete_silver",
+      "support_beam": "minecraft:blocks/log_oak"
+  }
+}
