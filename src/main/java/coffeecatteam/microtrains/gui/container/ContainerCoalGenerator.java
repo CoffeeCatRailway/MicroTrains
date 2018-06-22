@@ -1,11 +1,11 @@
 package coffeecatteam.microtrains.gui.container;
 
+import coffeecatteam.microtrains.gui.SlotCoalGenerator;
 import coffeecatteam.microtrains.objects.tileentity.TileCoalGenerator;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.Slot;
-import net.minecraft.inventory.SlotFurnaceFuel;
 import net.minecraft.item.ItemStack;
 
 public class ContainerCoalGenerator extends Container {
@@ -14,7 +14,7 @@ public class ContainerCoalGenerator extends Container {
 
     public ContainerCoalGenerator(IInventory player, TileCoalGenerator tileentity) {
         this.tileentity = tileentity;
-        addSlotToContainer(new SlotFurnaceFuel(tileentity, 0, 52, 45));
+        addSlotToContainer(new SlotCoalGenerator(tileentity, 0, 52, 45));
 
         for (int i = 0; i < 3; ++i)
             for (int j = 0; j < 9; ++j)
