@@ -1,11 +1,10 @@
 {
+  "parent": "microtrains:share/item/default_undercarriage",
   "source": "[120, -38, 99, 98, 19, -56, -51, -52, 75, 77, 46, 74, 76, 43, 81, 53, 118, 76, -52, 44, -78, 103, -112, 71, 22, 73, -50, -49, 75, 46, 74, 45, 73, -75, 79, -50, -49, -55, 47, -78, 77, 47, 74, -84, 100, 80, -60, -93, -96, 50, 53, 39, 39, -65, -100, 65, 1, -113, -110, -92, -100, -60, -28, 108, 6, 13, 108, 42, -30, 11, -14, -53, 83, 82, -117, 80, -51, 34, 66, 101, 113, 102, 78, 89, 106, 17, 67, -62, 7, 78, 6, 6, 79, 21, -105, 41, 12, 80, -32, 50, -59, 69, 4, -58, -10, 84, 97, -96, 10, -16, 84, 81, 96, -126, -79, 29, 88, 16, 108, -107, 73, -44, 55, 95, -127, 105, -8, -104, -49, -28, 65, 11, -13, 5, 24, 97, 108, -106, 9, -93, -26, -29, 11, -1, -95, 99, -66, 3, 11, 34, 127, 33, -40, 17, 75, -87, 99, 62, 114, -98, 69, 118, 63, -11, -52, 79, 96, -125, -79, 83, -90, -79, 8, -64, -40, -100, 10, -44, 10, 31, 68, 72, 51, 117, 0, 0, -51, 23, 99, 97]",
   "textures": {
-    "1597570685": "minecraft:blocks/concrete_powder_yellow",
-    "996045080": "minecraft:blocks/concrete_yellow",
-    "1497320729": "minecraft:blocks/concrete_powder_silver",
-    "1625632718": "minecraft:blocks/concrete_gray",
-    "842795395": "minecraft:blocks/concrete_black"
+    "body_second1": "minecraft:blocks/concrete_powder_yellow",
+    "body_second2": "minecraft:blocks/concrete_yellow",
+    "front": "minecraft:blocks/concrete_black"
   },
   "elements": [
     {
@@ -27,7 +26,7 @@
             9,
             13
           ],
-          "texture": "#1597570685",
+          "texture": "#body_second1",
           "cullface": "west"
         }
       }
@@ -51,7 +50,7 @@
             10,
             13
           ],
-          "texture": "#1597570685"
+          "texture": "#body_second1"
         }
       }
     },
@@ -74,7 +73,7 @@
             11,
             12
           ],
-          "texture": "#1597570685"
+          "texture": "#body_second1"
         }
       }
     },
@@ -97,7 +96,7 @@
             2,
             14
           ],
-          "texture": "#1597570685"
+          "texture": "#body_second1"
         }
       }
     },
@@ -120,7 +119,7 @@
             10,
             13
           ],
-          "texture": "#1597570685"
+          "texture": "#body_second1"
         }
       }
     },
@@ -143,7 +142,7 @@
             6,
             12
           ],
-          "texture": "#1597570685"
+          "texture": "#body_second1"
         }
       }
     },
@@ -166,7 +165,7 @@
             15,
             14
           ],
-          "texture": "#1597570685"
+          "texture": "#body_second1"
         }
       }
     },
@@ -189,7 +188,7 @@
             9,
             13
           ],
-          "texture": "#1597570685"
+          "texture": "#body_second1"
         }
       }
     },
@@ -212,7 +211,7 @@
             2,
             15
           ],
-          "texture": "#1597570685"
+          "texture": "#body_second1"
         }
       }
     },
@@ -235,7 +234,7 @@
             4,
             15
           ],
-          "texture": "#1597570685"
+          "texture": "#body_second1"
         }
       }
     },
@@ -258,7 +257,7 @@
             1,
             9
           ],
-          "texture": "#1597570685"
+          "texture": "#body_second1"
         }
       }
     },
@@ -281,7 +280,7 @@
             5,
             9
           ],
-          "texture": "#1597570685"
+          "texture": "#body_second1"
         }
       }
     },
@@ -304,7 +303,7 @@
             4,
             6
           ],
-          "texture": "#1597570685"
+          "texture": "#body_second1"
         }
       }
     },
@@ -327,7 +326,7 @@
             4,
             11
           ],
-          "texture": "#1597570685"
+          "texture": "#body_second1"
         }
       }
     },
@@ -350,7 +349,7 @@
             2,
             14
           ],
-          "texture": "#1597570685"
+          "texture": "#body_second1"
         }
       }
     },
@@ -373,7 +372,7 @@
             4,
             14
           ],
-          "texture": "#1597570685"
+          "texture": "#body_second1"
         }
       }
     },
@@ -396,7 +395,7 @@
             3,
             15
           ],
-          "texture": "#996045080",
+          "texture": "#body_second2",
           "cullface": "west"
         }
       }
@@ -420,7 +419,7 @@
             3,
             13
           ],
-          "texture": "#996045080",
+          "texture": "#body_second2",
           "cullface": "west"
         }
       }
@@ -444,7 +443,7 @@
             5,
             15
           ],
-          "texture": "#996045080",
+          "texture": "#body_second2",
           "cullface": "west"
         }
       }
@@ -468,7 +467,7 @@
             11,
             15
           ],
-          "texture": "#996045080",
+          "texture": "#body_second2",
           "cullface": "west"
         }
       }
@@ -492,7 +491,7 @@
             6,
             15
           ],
-          "texture": "#996045080",
+          "texture": "#body_second2",
           "cullface": "west"
         }
       }
@@ -516,7 +515,7 @@
             9,
             15
           ],
-          "texture": "#996045080",
+          "texture": "#body_second2",
           "cullface": "west"
         }
       }
@@ -540,7 +539,7 @@
             13,
             15
           ],
-          "texture": "#996045080",
+          "texture": "#body_second2",
           "cullface": "west"
         }
       }
@@ -564,7 +563,7 @@
             14,
             15
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -587,7 +586,7 @@
             14,
             13
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -610,7 +609,7 @@
             13,
             15
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -633,7 +632,7 @@
             10,
             15
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -656,7 +655,7 @@
             4,
             15
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -679,7 +678,7 @@
             7,
             15
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -702,7 +701,7 @@
             15,
             13
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -725,7 +724,7 @@
             3,
             13
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -748,7 +747,7 @@
             10,
             12
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -771,7 +770,7 @@
             2,
             15
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -794,7 +793,7 @@
             3,
             13
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -817,7 +816,7 @@
             14,
             15
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -840,7 +839,7 @@
             14,
             13
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -863,7 +862,7 @@
             13,
             15
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -886,7 +885,7 @@
             7,
             15
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -909,7 +908,7 @@
             11,
             15
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -932,7 +931,7 @@
             10,
             15
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -955,7 +954,7 @@
             4,
             15
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -978,7 +977,7 @@
             11,
             12
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -1001,7 +1000,7 @@
             15,
             15
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -1024,7 +1023,7 @@
             14,
             13
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -1047,7 +1046,7 @@
             2,
             13
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -1070,7 +1069,7 @@
             14,
             13
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -1093,7 +1092,7 @@
             3,
             15
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -1116,7 +1115,7 @@
             3,
             13
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -1139,7 +1138,7 @@
             6,
             15
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -1162,7 +1161,7 @@
             9,
             15
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -1185,7 +1184,7 @@
             13,
             15
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -1208,7 +1207,7 @@
             11,
             15
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -1231,7 +1230,7 @@
             3,
             2
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -1254,7 +1253,7 @@
             3,
             15
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -1277,7 +1276,7 @@
             1,
             6
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -1300,7 +1299,7 @@
             5,
             6
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -1323,7 +1322,7 @@
             5,
             11
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -1346,7 +1345,7 @@
             1,
             11
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -1369,7 +1368,7 @@
             5,
             5
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -1392,7 +1391,7 @@
             4,
             11
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -1415,7 +1414,7 @@
             3,
             13
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -1438,7 +1437,7 @@
             4,
             3
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -1461,7 +1460,7 @@
             4,
             14
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -1484,7 +1483,7 @@
             4,
             10
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -1507,7 +1506,7 @@
             3,
             5
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -1530,7 +1529,7 @@
             4,
             15
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -1553,7 +1552,7 @@
             4,
             13
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -1576,7 +1575,7 @@
             2,
             13
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -1599,7 +1598,7 @@
             1,
             12
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -1622,7 +1621,7 @@
             5,
             12
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -1645,7 +1644,7 @@
             1,
             13
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -1668,7 +1667,7 @@
             5,
             13
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -1691,7 +1690,7 @@
             4,
             13
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -1714,7 +1713,7 @@
             2,
             13
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -1737,7 +1736,7 @@
             4,
             15
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -1760,7 +1759,7 @@
             3,
             14
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -1783,7 +1782,7 @@
             15,
             15
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -1806,7 +1805,7 @@
             13,
             13
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -1829,7 +1828,7 @@
             15,
             13
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -1852,7 +1851,7 @@
             15,
             14
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -1875,7 +1874,7 @@
             15,
             13
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -1898,7 +1897,7 @@
             13,
             13
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -1921,7 +1920,7 @@
             15,
             15
           ],
-          "texture": "#996045080"
+          "texture": "#body_second2"
         }
       }
     },
@@ -1944,7 +1943,7 @@
             13,
             12
           ],
-          "texture": "#1497320729",
+          "texture": "#roof",
           "cullface": "west"
         }
       }
@@ -1968,7 +1967,7 @@
             5,
             12
           ],
-          "texture": "#1497320729"
+          "texture": "#roof"
         }
       }
     },
@@ -1991,7 +1990,7 @@
             5,
             13
           ],
-          "texture": "#1497320729"
+          "texture": "#roof"
         }
       }
     },
@@ -2014,7 +2013,7 @@
             1,
             13
           ],
-          "texture": "#1497320729"
+          "texture": "#roof"
         }
       }
     },
@@ -2037,7 +2036,7 @@
             1,
             12
           ],
-          "texture": "#1497320729"
+          "texture": "#roof"
         }
       }
     },
@@ -2060,7 +2059,7 @@
             5,
             12
           ],
-          "texture": "#1497320729"
+          "texture": "#roof"
         }
       }
     },
@@ -2083,7 +2082,7 @@
             16,
             12
           ],
-          "texture": "#1497320729"
+          "texture": "#roof"
         }
       }
     },
@@ -2106,7 +2105,7 @@
             12,
             12
           ],
-          "texture": "#1497320729"
+          "texture": "#roof"
         }
       }
     },
@@ -2129,7 +2128,7 @@
             5,
             15
           ],
-          "texture": "#1625632718",
+          "texture": "#base",
           "cullface": "down"
         }
       }
@@ -2153,7 +2152,7 @@
             5,
             2
           ],
-          "texture": "#1625632718",
+          "texture": "#base",
           "cullface": "down"
         }
       }
@@ -2177,7 +2176,7 @@
             5,
             4
           ],
-          "texture": "#1625632718",
+          "texture": "#base",
           "cullface": "down"
         }
       }
@@ -2201,7 +2200,7 @@
             1,
             4
           ],
-          "texture": "#1625632718",
+          "texture": "#base",
           "cullface": "down"
         }
       }
@@ -2225,7 +2224,7 @@
             2,
             16
           ],
-          "texture": "#1625632718",
+          "texture": "#base",
           "cullface": "west"
         }
       }
@@ -2249,7 +2248,7 @@
             11,
             16
           ],
-          "texture": "#1625632718",
+          "texture": "#base",
           "cullface": "west"
         }
       }
@@ -2273,7 +2272,7 @@
             3,
             14
           ],
-          "texture": "#1625632718",
+          "texture": "#base",
           "cullface": "west"
         }
       }
@@ -2297,7 +2296,7 @@
             15,
             16
           ],
-          "texture": "#1625632718",
+          "texture": "#base",
           "cullface": "west"
         }
       }
@@ -2321,7 +2320,7 @@
             12,
             16
           ],
-          "texture": "#1625632718",
+          "texture": "#base",
           "cullface": "west"
         }
       }
@@ -2345,7 +2344,7 @@
             14,
             14
           ],
-          "texture": "#1625632718"
+          "texture": "#base"
         }
       }
     },
@@ -2368,7 +2367,7 @@
             4,
             16
           ],
-          "texture": "#1625632718"
+          "texture": "#base"
         }
       }
     },
@@ -2391,7 +2390,7 @@
             5,
             15
           ],
-          "texture": "#1625632718"
+          "texture": "#base"
         }
       }
     },
@@ -2414,7 +2413,7 @@
             3,
             12
           ],
-          "texture": "#1625632718"
+          "texture": "#base"
         }
       }
     },
@@ -2437,7 +2436,7 @@
             15,
             16
           ],
-          "texture": "#1625632718"
+          "texture": "#base"
         }
       }
     },
@@ -2460,7 +2459,7 @@
             14,
             16
           ],
-          "texture": "#1625632718"
+          "texture": "#base"
         }
       }
     },
@@ -2483,7 +2482,7 @@
             14,
             14
           ],
-          "texture": "#1625632718"
+          "texture": "#base"
         }
       }
     },
@@ -2506,7 +2505,7 @@
             4,
             16
           ],
-          "texture": "#1625632718"
+          "texture": "#base"
         }
       }
     },
@@ -2529,7 +2528,7 @@
             5,
             16
           ],
-          "texture": "#1625632718"
+          "texture": "#base"
         }
       }
     },
@@ -2552,7 +2551,7 @@
             14,
             12
           ],
-          "texture": "#1625632718"
+          "texture": "#base"
         }
       }
     },
@@ -2575,7 +2574,7 @@
             3,
             14
           ],
-          "texture": "#1625632718"
+          "texture": "#base"
         }
       }
     },
@@ -2598,7 +2597,7 @@
             14,
             16
           ],
-          "texture": "#1625632718"
+          "texture": "#base"
         }
       }
     },
@@ -2621,7 +2620,7 @@
             12,
             15
           ],
-          "texture": "#1625632718"
+          "texture": "#base"
         }
       }
     },
@@ -2644,7 +2643,7 @@
             4,
             12
           ],
-          "texture": "#1625632718"
+          "texture": "#base"
         }
       }
     },
@@ -2667,7 +2666,7 @@
             5,
             15
           ],
-          "texture": "#1625632718"
+          "texture": "#base"
         }
       }
     },
@@ -2690,7 +2689,7 @@
             1,
             15
           ],
-          "texture": "#1625632718"
+          "texture": "#base"
         }
       }
     },
@@ -2713,7 +2712,7 @@
             5,
             2
           ],
-          "texture": "#1625632718"
+          "texture": "#base"
         }
       }
     },
@@ -2736,7 +2735,7 @@
             4,
             14
           ],
-          "texture": "#1625632718"
+          "texture": "#base"
         }
       }
     },
@@ -2759,7 +2758,7 @@
             2,
             13
           ],
-          "texture": "#1625632718"
+          "texture": "#base"
         }
       }
     },
@@ -2782,7 +2781,7 @@
             4,
             13
           ],
-          "texture": "#1625632718"
+          "texture": "#base"
         }
       }
     },
@@ -2805,7 +2804,7 @@
             3,
             15
           ],
-          "texture": "#1625632718"
+          "texture": "#base"
         }
       }
     },
@@ -2828,7 +2827,7 @@
             3,
             3
           ],
-          "texture": "#1625632718"
+          "texture": "#base"
         }
       }
     },
@@ -2851,7 +2850,7 @@
             4,
             5
           ],
-          "texture": "#1625632718"
+          "texture": "#base"
         }
       }
     },
@@ -2874,7 +2873,7 @@
             2,
             5
           ],
-          "texture": "#1625632718"
+          "texture": "#base"
         }
       }
     },
@@ -2897,7 +2896,7 @@
             4,
             16
           ],
-          "texture": "#1625632718"
+          "texture": "#base"
         }
       }
     },
@@ -2920,7 +2919,7 @@
             4,
             12
           ],
-          "texture": "#1625632718"
+          "texture": "#base"
         }
       }
     },
@@ -2943,7 +2942,7 @@
             5,
             16
           ],
-          "texture": "#1625632718"
+          "texture": "#base"
         }
       }
     },
@@ -2966,7 +2965,7 @@
             16,
             16
           ],
-          "texture": "#1625632718"
+          "texture": "#base"
         }
       }
     },
@@ -2989,7 +2988,7 @@
             16,
             15
           ],
-          "texture": "#1625632718"
+          "texture": "#base"
         }
       }
     },
@@ -3012,7 +3011,7 @@
             12,
             15
           ],
-          "texture": "#1625632718"
+          "texture": "#base"
         }
       }
     },
@@ -3035,7 +3034,7 @@
             16,
             12
           ],
-          "texture": "#1625632718"
+          "texture": "#base"
         }
       }
     },
@@ -3058,7 +3057,7 @@
             15,
             16
           ],
-          "texture": "#1625632718"
+          "texture": "#base"
         }
       }
     },
@@ -3081,7 +3080,7 @@
             14,
             15
           ],
-          "texture": "#842795395",
+          "texture": "#front",
           "cullface": "west"
         }
       }
@@ -3105,7 +3104,7 @@
             3,
             15
           ],
-          "texture": "#842795395"
+          "texture": "#front"
         }
       }
     },
@@ -3128,7 +3127,7 @@
             3,
             15
           ],
-          "texture": "#842795395"
+          "texture": "#front"
         }
       }
     },
@@ -3151,7 +3150,7 @@
             14,
             15
           ],
-          "texture": "#842795395"
+          "texture": "#front"
         }
       }
     },
@@ -3174,7 +3173,7 @@
             1,
             14
           ],
-          "texture": "#842795395"
+          "texture": "#front"
         }
       }
     },
@@ -3197,7 +3196,7 @@
             5,
             14
           ],
-          "texture": "#842795395"
+          "texture": "#front"
         }
       }
     },
@@ -3220,7 +3219,7 @@
             1,
             15
           ],
-          "texture": "#842795395"
+          "texture": "#front"
         }
       }
     },
@@ -3243,7 +3242,7 @@
             5,
             15
           ],
-          "texture": "#842795395"
+          "texture": "#front"
         }
       }
     }
