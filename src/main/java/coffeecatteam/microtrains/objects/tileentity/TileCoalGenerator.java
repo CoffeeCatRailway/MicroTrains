@@ -5,7 +5,6 @@ import cofh.core.energy.FurnaceFuelHandler;
 import cofh.redstoneflux.api.IEnergyProvider;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
 import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -18,15 +17,14 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentTranslation;
 
-import javax.annotation.Nullable;
-
 public class TileCoalGenerator extends TileEntity implements IInventory, IEnergyProvider, ITickable {
 
     private int increasePerTick = 20;
 
-    private int maxRF = 100000;
+    private int capacity = 10000;
+    private int maxExtract = 50;
     private int currentRF;
-    private int cooldown;
+    private int cooldown = 100;
 
     private NonNullList<ItemStack> inventory = NonNullList.<ItemStack>withSize(1, ItemStack.EMPTY);
 
@@ -40,7 +38,6 @@ public class TileCoalGenerator extends TileEntity implements IInventory, IEnergy
         return false;
     }
 
-    @Nullable
     @Override
     public ITextComponent getDisplayName() {
         return new TextComponentTranslation(getName());
@@ -136,7 +133,7 @@ public class TileCoalGenerator extends TileEntity implements IInventory, IEnergy
             case 0:
                 return this.currentRF;
             case 1:
-                return this.maxRF;
+                return this.capacity;
             case 2:
                 return this.cooldown;
             case 3:
@@ -151,7 +148,7 @@ public class TileCoalGenerator extends TileEntity implements IInventory, IEnergy
             case 0:
                 this.currentRF = value;
             case 1:
-                this.maxRF = value;
+                this.capacity = value;
             case 2:
                 this.cooldown = value;
             case 3:
@@ -200,6 +197,7 @@ public class TileCoalGenerator extends TileEntity implements IInventory, IEnergy
         this.currentRF = compound.getInteger("currentRF");
         this.cooldown = compound.getInteger("cooldown");
         this.increasePerTick = compound.getInteger("ipt");
+
         super.readFromNBT(compound);
     }
 
@@ -210,7 +208,7 @@ public class TileCoalGenerator extends TileEntity implements IInventory, IEnergy
 
     @Override
     public int getMaxEnergyStored(EnumFacing from) {
-        return maxRF;
+        return this.capacity;
     }
 
     @Override
@@ -230,13 +228,6 @@ public class TileCoalGenerator extends TileEntity implements IInventory, IEnergy
             ItemStack stack = this.inventory.get(0);
             if(canUse(stack)) {
                 if(this.cooldown <= 0) {
-                    if(stack ==  new ItemStack(Blocks.COAL_BLOCK)) {
-                        this.cooldown = 600;
-                        this.increasePerTick = 50;
-                    } else {
-                        this.cooldown = 70;
-                        this.increasePerTick = 20;
-                    }
                     this.inventory.get(0).setCount(this.inventory.get(0).getCount() - 1);
                     if(this.inventory.get(0).getCount() == 0) {
                         this.inventory.set(0, ItemStack.EMPTY);
@@ -245,9 +236,8 @@ public class TileCoalGenerator extends TileEntity implements IInventory, IEnergy
             }
             if(this.cooldown > 0) {
                 this.cooldown--;
-                if(this.currentRF < this.maxRF) {
+                if(this.currentRF < this.capacity)
                     this.currentRF += this.increasePerTick;
-                }
             }
             this.markDirty();
         }
@@ -260,9 +250,8 @@ public class TileCoalGenerator extends TileEntity implements IInventory, IEnergy
         else {
             String name = I18n.format(stack.getUnlocalizedName() + ".name").toLowerCase();
             if(name.contains("coal") && TileEntityFurnace.isItemFuel(stack)) {
-                if(this.currentRF < this.maxRF) {
+                if(this.currentRF < this.capacity)
                     return true;
-                }
             }
         }
         return false;
