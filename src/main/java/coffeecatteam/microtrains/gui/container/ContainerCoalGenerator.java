@@ -14,7 +14,7 @@ public class ContainerCoalGenerator extends Container {
 
     public ContainerCoalGenerator(IInventory player, TileCoalGenerator tileentity) {
         this.tileentity = tileentity;
-        addSlotToContainer(new SlotFurnaceFuel(tileentity, 0, 80, 64));
+        addSlotToContainer(new SlotFurnaceFuel(tileentity, 0, 52, 45));
 
         for (int i = 0; i < 3; ++i)
             for (int j = 0; j < 9; ++j)
