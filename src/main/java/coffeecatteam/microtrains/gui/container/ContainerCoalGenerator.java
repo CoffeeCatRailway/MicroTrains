@@ -27,17 +27,20 @@ public class ContainerCoalGenerator extends Container {
     @Override
     public ItemStack transferStackInSlot(EntityPlayer player, int index) {
         ItemStack prev = ItemStack.EMPTY;
-        Slot slot = (Slot) inventorySlots.get(index);
+        Slot slot = inventorySlots.get(index);
         int size = tileentity.getSizeInventory();
+
         if (slot != null && slot.getHasStack()) {
             ItemStack current = slot.getStack();
             prev = current.copy();
+
             if (index < size)
                 if (!mergeItemStack(current, size, size + 36, true))
                     return ItemStack.EMPTY;
             else
                 if (!mergeItemStack(current, 0, size, false))
                     return ItemStack.EMPTY;
+
             if (current.getCount() == 0)
                 slot.putStack(ItemStack.EMPTY);
             else
