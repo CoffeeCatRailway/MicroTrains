@@ -227,10 +227,12 @@ public class TileCoalGenerator extends TileEntity implements IInventory, IEnergy
         if(this.world != null) {
             ItemStack stack = this.inventory.get(0);
             if(canUse(stack)) {
-                if(this.cooldown <= 0) {
-                    this.inventory.get(0).setCount(this.inventory.get(0).getCount() - 1);
-                    if(this.inventory.get(0).getCount() == 0) {
-                        this.inventory.set(0, ItemStack.EMPTY);
+                if(this.currentRF < this.capacity) {
+                    if (this.cooldown <= 0) {
+                        stack.shrink(1);
+                        if (stack.getCount() == 0) {
+                            this.inventory.set(0, ItemStack.EMPTY);
+                        }
                     }
                 }
             }
@@ -244,14 +246,13 @@ public class TileCoalGenerator extends TileEntity implements IInventory, IEnergy
     }
 
     private boolean canUse(ItemStack stack) {
-        if(this.inventory.get(0) == null) {
+        if(stack == null) {
             return false;
         }
         else {
             String name = I18n.format(stack.getUnlocalizedName() + ".name").toLowerCase();
             if(name.contains("coal") && TileEntityFurnace.isItemFuel(stack)) {
-                if(this.currentRF < this.capacity)
-                    return true;
+                return this.currentRF < this.capacity;
             }
         }
         return false;
