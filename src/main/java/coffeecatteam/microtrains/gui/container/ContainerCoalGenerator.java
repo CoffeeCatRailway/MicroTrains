@@ -10,11 +10,11 @@ import net.minecraft.item.ItemStack;
 
 public class ContainerCoalGenerator extends Container {
 
-    private final TileCoalGenerator tileentity;
+    private final TileCoalGenerator generator;
 
-    public ContainerCoalGenerator(IInventory player, TileCoalGenerator tileentity) {
-        this.tileentity = tileentity;
-        addSlotToContainer(new SlotCoalGenerator(tileentity, 0, 52, 45));
+    public ContainerCoalGenerator(IInventory player, TileCoalGenerator generator) {
+        this.generator = generator;
+        addSlotToContainer(new SlotCoalGenerator(generator, 0, 52, 45));
 
         for (int i = 0; i < 3; ++i)
             for (int j = 0; j < 9; ++j)
@@ -28,7 +28,7 @@ public class ContainerCoalGenerator extends Container {
     public ItemStack transferStackInSlot(EntityPlayer player, int index) {
         ItemStack prev = ItemStack.EMPTY;
         Slot slot = inventorySlots.get(index);
-        int size = tileentity.getSizeInventory();
+        int size = generator.getSizeInventory();
 
         if (slot != null && slot.getHasStack()) {
             ItemStack current = slot.getStack();

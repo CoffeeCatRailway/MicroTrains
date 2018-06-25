@@ -14,19 +14,51 @@ import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.NonNullList;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.energy.CapabilityEnergy;
+import net.minecraftforge.energy.IEnergyStorage;
 
-public class TileCoalGenerator extends TileEntity implements IInventory, IEnergyProvider, ITickable {
+import javax.annotation.Nullable;
+import java.util.Random;
 
-    private int increasePerTick = 20;
+public class TileCoalGenerator extends TileEntity implements IInventory, ITickable {
 
-    private int capacity = 10000;
-    private int maxExtract = 50;
-    private int currentRF;
-    private int cooldown = 100;
+    private CGEnergyStorage energyStorage;
+    private int maxCooldown = 10;
+    private int cooldown = maxCooldown;
 
     private NonNullList<ItemStack> inventory = NonNullList.<ItemStack>withSize(1, ItemStack.EMPTY);
+
+    public TileCoalGenerator() {
+        energyStorage = new CGEnergyStorage(10000, 0, 1000, 0);
+    }
+
+    @Override
+    public int getField(int id) {
+        switch (id) {
+        case 0:
+            return this.cooldown;
+        default:
+            return 0;
+        }
+    }
+
+    @Override
+    public void setField(int id, int value) {
+        switch (id) {
+        case 0:
+            this.cooldown = value;
+            break;
+        }
+    }
+
+    @Override
+    public int getFieldCount() {
+        return 1;
+    }
 
     @Override
     public String getName() {
@@ -128,40 +160,6 @@ public class TileCoalGenerator extends TileEntity implements IInventory, IEnergy
     }
 
     @Override
-    public int getField(int id) {
-        switch(id) {
-            case 0:
-                return this.currentRF;
-            case 1:
-                return this.capacity;
-            case 2:
-                return this.cooldown;
-            case 3:
-                return this.increasePerTick;
-        }
-        return 0;
-    }
-
-    @Override
-    public void setField(int id, int value) {
-        switch(id) {
-            case 0:
-                this.currentRF = value;
-            case 1:
-                this.capacity = value;
-            case 2:
-                this.cooldown = value;
-            case 3:
-                this.increasePerTick = value;
-        }
-    }
-
-    @Override
-    public int getFieldCount() {
-        return 4;
-    }
-
-    @Override
     public void clear() {
         for (int i = 0; i < getSizeInventory(); i++)
             setInventorySlotContents(i, ItemStack.EMPTY);
@@ -179,9 +177,8 @@ public class TileCoalGenerator extends TileEntity implements IInventory, IEnergy
             }
         }
         compound.setTag("Items", list);
-        compound.setInteger("currentRF", this.currentRF);
         compound.setInteger("cooldown", this.cooldown);
-        compound.setInteger("ipt", this.increasePerTick);
+        compound.setInteger("energyStored", energyStorage.getEnergyStored());
 
         return super.writeToNBT(compound);
     }
@@ -194,67 +191,64 @@ public class TileCoalGenerator extends TileEntity implements IInventory, IEnergy
             int slot = stackTag.getByte("Slot") & 255;
             setInventorySlotContents(slot, new ItemStack(stackTag));
         }
-        this.currentRF = compound.getInteger("currentRF");
         this.cooldown = compound.getInteger("cooldown");
-        this.increasePerTick = compound.getInteger("ipt");
+        energyStorage.setEnergy(compound.getInteger("energyStored"));
 
         super.readFromNBT(compound);
-    }
-
-    @Override
-    public int getEnergyStored(EnumFacing from) {
-        return this.currentRF;
-    }
-
-    @Override
-    public int getMaxEnergyStored(EnumFacing from) {
-        return this.capacity;
-    }
-
-    @Override
-    public boolean canConnectEnergy(EnumFacing from) {
-        return true; // (from == EnumFacing.EAST || from == EnumFacing.SOUTH || from == EnumFacing.WEST)
-    }
-
-    @Override
-    public int extractEnergy(EnumFacing from, int maxExtract, boolean simulate) {
-        currentRF -= maxExtract;
-        return maxExtract;
     }
 
     @Override
     public void update() {
         if(this.world != null) {
             ItemStack stack = this.inventory.get(0);
-            if(canUse(stack)) {
-                if(this.currentRF < this.capacity) {
-                    if (this.cooldown <= 0) {
-                        stack.shrink(1);
-                        if (stack.getCount() == 0) {
-                            this.inventory.set(0, ItemStack.EMPTY);
-                        }
-                    }
+            if (!stack.isEmpty()) {
+                cooldown--;
+                if (cooldown <= 0) {
+                    stack.shrink(1);
+                    this.energyStorage.addEnergy(10);
+                    cooldown = maxCooldown;
                 }
             }
-            if(this.cooldown > 0) {
-                this.cooldown--;
-                if(this.currentRF < this.capacity)
-                    this.currentRF += this.increasePerTick;
-            }
+
+            // Check if stored energy is greater then max capacity
+            if (this.energyStorage.getEnergyStored() >= this.energyStorage.getCapacity())
+                this.energyStorage.setEnergy(this.energyStorage.getCapacity());
+
+            // Output energy if stored energy is greater then 0
+            if (this.energyStorage.getEnergyStored() > 0)
+                outputEnergy();
+
             this.markDirty();
         }
     }
 
-    private boolean canUse(ItemStack stack) {
-        if(stack == null) {
-            return false;
-        }
-        else {
-            String name = I18n.format(stack.getUnlocalizedName() + ".name").toLowerCase();
-            if(name.contains("coal") && TileEntityFurnace.isItemFuel(stack)) {
-                return this.currentRF < this.capacity;
+    @Override
+    public boolean hasCapability(Capability<?> capability, @Nullable EnumFacing facing) {
+        if(capability == CapabilityEnergy.ENERGY) return true;
+        return super.hasCapability(capability, facing);
+    }
+    @Override
+    @Nullable
+    @SuppressWarnings("unchecked")
+    public <T> T getCapability(Capability<T> capability, @Nullable EnumFacing facing) {
+        if(capability == CapabilityEnergy.ENERGY) return (T) energyStorage;
+        return super.getCapability(capability, facing);
+    }
+
+    private void outputEnergy() {
+        BlockPos pos = getPos().down();
+        if(world.isBlockLoaded(pos)) {
+            TileEntity tile = world.getTileEntity(pos);
+            if(tile != null) {
+                if(tile.hasCapability(CapabilityEnergy.ENERGY, EnumFacing.UP)) {
+                    IEnergyStorage storage = tile.getCapability(CapabilityEnergy.ENERGY, EnumFacing.UP);
+                    if (storage != null) {
+                        int power = energyStorage.extractEnergy(Integer.MAX_VALUE, true);
+                        int drained = storage.receiveEnergy(power, false);
+                        energyStorage.extractEnergy(drained, false);
+                    }
+                }
             }
         }
-        return false;
     }
 }
