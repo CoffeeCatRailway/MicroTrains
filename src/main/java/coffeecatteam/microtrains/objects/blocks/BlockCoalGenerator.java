@@ -1,7 +1,6 @@
 package coffeecatteam.microtrains.objects.blocks;
 
 import coffeecatteam.microtrains.MicroTrains;
-import coffeecatteam.microtrains.gui.GuiCoalGenerator;
 import coffeecatteam.microtrains.objects.tileentity.TileCoalGenerator;
 import coffeecatteam.microtrains.util.GuiHandler;
 import net.minecraft.block.BlockContainer;
@@ -80,6 +79,10 @@ public class BlockCoalGenerator extends BlockContainer {
 
     protected BlockStateContainer createBlockState() {
         return new BlockStateContainer(this, new IProperty[]{ FACING });
+    }
+
+    public void onBlockAdded(World world, BlockPos pos, IBlockState state) {
+        this.setDefaultFacing(world, pos, state);
     }
 
     private void setDefaultFacing(World worldIn, BlockPos pos, IBlockState state) {
