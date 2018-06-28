@@ -13,6 +13,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.NonNullList;
@@ -30,48 +31,16 @@ import javax.annotation.Nullable;
 public class TileCoalGenerator extends TileEntity implements IInventory, ITickable {
 
     private CGEnergyStorage energyStorage;
-    private int maxCooldown = 50;
+
+    private int maxCooldown = 100;
     private int cooldown = maxCooldown;
+
     private boolean burn;
 
     private NonNullList<ItemStack> inventory = NonNullList.<ItemStack>withSize(1, ItemStack.EMPTY);
 
     public TileCoalGenerator() {
-        energyStorage = new CGEnergyStorage(10000, 0, 50, 0);
-    }
-
-    @Override
-    public int getField(int id) {
-        switch (id) {
-        case 0:
-            return this.cooldown;
-        case 1:
-            return this.energyStorage.getEnergyStored();
-        case 2:
-            return this.energyStorage.getMaxEnergyStored();
-        default:
-            return 0;
-        }
-    }
-
-    @Override
-    public void setField(int id, int value) {
-        switch (id) {
-        case 0:
-            this.cooldown = value;
-            break;
-        case 1:
-            this.energyStorage.setEnergy(value);;
-            break;
-        case 2:
-            this.energyStorage.setCapacity(value);
-            break;
-        }
-    }
-
-    @Override
-    public int getFieldCount() {
-        return 3;
+        energyStorage = new CGEnergyStorage(100000, 0, 50, 0);
     }
 
     @Override
@@ -212,6 +181,46 @@ public class TileCoalGenerator extends TileEntity implements IInventory, ITickab
 
         super.readFromNBT(compound);
     }
+
+    @Override
+    public int getField(int id) {
+        switch (id) {
+            case 0:
+                return this.cooldown;
+            case 1:
+                return this.maxCooldown;
+            case 2:
+                return this.energyStorage.getEnergyStored();
+            case 3:
+                return this.energyStorage.getMaxEnergyStored();
+            default:
+                return 0;
+        }
+    }
+
+    @Override
+    public void setField(int id, int value) {
+        switch (id) {
+            case 0:
+                this.cooldown = value;
+                break;
+            case 1:
+                this.maxCooldown = value;
+                break;
+            case 2:
+                this.energyStorage.setEnergy(value);;
+                break;
+            case 3:
+                this.energyStorage.setCapacity(value);
+                break;
+        }
+    }
+
+    @Override
+    public int getFieldCount() {
+        return 4;
+    }
+
     @Override
     public void update() {
         if(this.world != null) {
@@ -231,7 +240,7 @@ public class TileCoalGenerator extends TileEntity implements IInventory, ITickab
 
                     // Check if cooldown is done
                     if (this.cooldown <= 0) {
-                        this.cooldown = this.maxCooldown;
+                        this.cooldown = maxCooldown;
                         stack.shrink(1);
                         this.burn = false;
                     }
@@ -269,12 +278,12 @@ public class TileCoalGenerator extends TileEntity implements IInventory, ITickab
             Block block = Block.getBlockFromItem(item);
 
             if (block == Blocks.COAL_BLOCK)
-                return 3000;
+                return 2000;
         }
         if (item == Items.COAL)
-            return 300;
+            return 200;
 
-        return 200;
+        return 100;
     }
 
     private void outputEnergy() {
