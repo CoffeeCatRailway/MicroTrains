@@ -45,7 +45,7 @@ public class GuiCoalGenerator extends GuiContainer {
 
         if(mouseX >= this.guiLeft + 84 && mouseX <= this.guiLeft + 119 && mouseY >= this.guiTop + 26 && mouseY <= this.guiTop + 63) {
             List<String> text = new ArrayList<>();
-            text.add(this.generator.getField(1) + "RF / " + this.generator.getField(2) + "RF");
+            text.add(this.generator.getField(2) + "RF / " + this.generator.getField(3) + "RF");
             this.drawHoveringText(text, mouseX - this.guiLeft, mouseY - this.guiTop);
         }
     }
@@ -57,23 +57,16 @@ public class GuiCoalGenerator extends GuiContainer {
         this.drawTexturedModalRect(this.guiLeft, this.guiTop, 0, 0, this.xSize, this.ySize);
 
         if (TileCoalGenerator.isBurning(this.generator)) {
-            int k = this.getBurnLeftScaled(13);
+            int k = getBurnTime(13);
             this.drawTexturedModalRect(this.guiLeft + 52, this.guiTop + 40 - k, 176, 12 - k, 14, k + 1);
         }
 
-        //this.drawTexturedModalRect(this.guiLeft + 84, this.guiTop + 26, 180, 176, 14, 38);
+        // this.drawTexturedModalRect(this.guiLeft + 84, this.guiTop + 26, 180, 176, 14, 38);
     }
 
-    private int getBurnLeftScaled(int pixels) {
-        int i = this.generator.getField(0);
-        if (i == 0)
-            i = 100;
-        return 100 * pixels / i;
-    }
-
-    private int getProgressLevel(int progressIndicatorPixelHeight) {
-        int rf = this.generator.getField(0);
-        int maxRF = this.generator.getField(1);
-        return maxRF != 0 && rf != 0 ? (rf * progressIndicatorPixelHeight) / maxRF : 0;
+    private int getBurnTime(int pixels) {
+        if (this.generator.getField(0) == this.generator.getField(1))
+            return -1;
+        return this.generator.getField(0) * pixels / 100;
     }
 }
