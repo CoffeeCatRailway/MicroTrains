@@ -9,7 +9,7 @@ tile.controller.name=Micro Rail Controller
 tile.controller.info=When placed with blue & red wires connected/facing a corner of a table it will detect how many tables there are and the GUI will adapt and will add more slots to place rails and/or scenery.
 
 tile.coal_generator.name=Coal Generator
-tile.coal_generator.info=Burn coal or any furnace fuel to generate RF.
+tile.coal_generator.info=Burn coal to generate RF. 1 stack generates around 95,000 RF.
 
 # Other
 itemGroup.microtab=Micro Trains

@@ -8,8 +8,16 @@ public class CGEnergyStorage extends EnergyStorage {
         super(capacity, maxReceive, maxExtract, energy);
     }
 
+    public int getMaxReceive() {
+        return this.maxReceive;
+    }
+
     public int getMaxExtract() {
         return this.maxExtract;
+    }
+
+    public boolean isFull() {
+        return this.energy >= this.capacity;
     }
 
     public int getCapacity() {

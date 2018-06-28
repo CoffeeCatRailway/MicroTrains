@@ -22,19 +22,22 @@ import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.energy.CapabilityEnergy;
 import net.minecraftforge.energy.IEnergyStorage;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 
 public class TileCoalGenerator extends TileEntity implements IInventory, ITickable {
 
     private CGEnergyStorage energyStorage;
-    private int maxCooldown = 100;
+    private int maxCooldown = 50;
     private int cooldown = maxCooldown;
+    private boolean burn;
 
     private NonNullList<ItemStack> inventory = NonNullList.<ItemStack>withSize(1, ItemStack.EMPTY);
 
     public TileCoalGenerator() {
-        energyStorage = new CGEnergyStorage(10000, 0, 10, 0);
+        energyStorage = new CGEnergyStorage(10000, 0, 50, 0);
     }
 
     @Override
@@ -190,6 +193,7 @@ public class TileCoalGenerator extends TileEntity implements IInventory, ITickab
         compound.setTag("Items", list);
         compound.setInteger("cooldown", this.cooldown);
         compound.setInteger("energyStored", this.energyStorage.getEnergyStored());
+        compound.setBoolean("burn", this.burn);
 
         return super.writeToNBT(compound);
     }
@@ -204,26 +208,39 @@ public class TileCoalGenerator extends TileEntity implements IInventory, ITickab
         }
         this.cooldown = compound.getInteger("cooldown");
         this.energyStorage.setEnergy(compound.getInteger("energyStored"));
+        this.burn = compound.getBoolean("burn");
 
         super.readFromNBT(compound);
     }
-
     @Override
     public void update() {
         if(this.world != null) {
-            ItemStack stack = this.inventory.get(0);
-            if (!stack.isEmpty()) {
-                cooldown--;
-                if (this.isBurning()) {
-                    stack.shrink(1);
-                    this.energyStorage.addEnergy(getEnergyFromCoal(stack));
-                    cooldown = maxCooldown;
-                }
-            }
-
             // Check if stored energy is greater then max capacity
-            if (this.energyStorage.getEnergyStored() >= this.energyStorage.getCapacity())
+            if (this.energyStorage.isFull()) {
                 this.energyStorage.setEnergy(this.energyStorage.getCapacity());
+            } else {
+                ItemStack stack = this.inventory.get(0);
+
+                // Check if stack is empty
+                if (!stack.isEmpty())
+                    this.burn = true;
+
+                // Cooldown
+                if (burn) {
+                    this.cooldown--;
+
+                    // Check if cooldown is done
+                    if (this.cooldown <= 0) {
+                        this.cooldown = this.maxCooldown;
+                        stack.shrink(1);
+                        this.burn = false;
+                    }
+                }
+
+                // Add energy to storage if burning
+                if (isBurning() && this.burn)
+                    this.energyStorage.addEnergy(getEnergyFromCoal(stack) / 10);
+            }
 
             // Output energy if stored energy is greater then 0
             if (this.energyStorage.getEnergyStored() > 0)
@@ -231,6 +248,15 @@ public class TileCoalGenerator extends TileEntity implements IInventory, ITickab
 
             this.markDirty();
         }
+    }
+
+    public boolean isBurning() {
+        return this.cooldown > 0;
+    }
+
+    @SideOnly(Side.CLIENT)
+    public static boolean isBurning(IInventory inventory) {
+        return inventory.getField(0) > 0;
     }
 
     /*
@@ -243,12 +269,12 @@ public class TileCoalGenerator extends TileEntity implements IInventory, ITickab
             Block block = Block.getBlockFromItem(item);
 
             if (block == Blocks.COAL_BLOCK)
-                return 2000;
+                return 3000;
         }
         if (item == Items.COAL)
-            return 200;
+            return 300;
 
-        return 100;
+        return 200;
     }
 
     private void outputEnergy() {
@@ -272,20 +298,13 @@ public class TileCoalGenerator extends TileEntity implements IInventory, ITickab
         }
     }
 
-    public CGEnergyStorage getEnergyStorage() {
-        return this.energyStorage;
-    }
-
-    public boolean isBurning() {
-        return cooldown <= 0;
-    }
-
     @Override
     public boolean hasCapability(Capability<?> capability, @Nullable EnumFacing facing) {
         if(capability == CapabilityEnergy.ENERGY)
             return true;
         return super.hasCapability(capability, facing);
     }
+
     @Override
     @Nullable
     public <T> T getCapability(Capability<T> capability, @Nullable EnumFacing facing) {
