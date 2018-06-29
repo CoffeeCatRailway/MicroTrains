@@ -24,32 +24,40 @@ public class ContainerCoalGenerator extends Container {
             this.addSlotToContainer(new Slot(player, k, 8 + k * 18, 142));
     }
 
-    @Override
-    public ItemStack transferStackInSlot(EntityPlayer player, int index) {
-        ItemStack prev = ItemStack.EMPTY;
-        Slot slot = inventorySlots.get(index);
+    private boolean performMerge(int slotIndex, ItemStack stack) {
         int size = generator.getSizeInventory();
 
-        if (slot != null && slot.getHasStack()) {
-            ItemStack current = slot.getStack();
-            prev = current.copy();
-
-            if (index < size)
-                if (!mergeItemStack(current, size, size + 36, true))
-                    return ItemStack.EMPTY;
-            else
-                if (!mergeItemStack(current, 0, size, false))
-                    return ItemStack.EMPTY;
-
-            if (current.getCount() == 0)
-                slot.putStack(ItemStack.EMPTY);
-            else
-                slot.onSlotChanged();
-            if (current.getCount() == prev.getCount())
-                return ItemStack.EMPTY;
-            slot.onTake(player, current);
+        if (slotIndex < size) {
+            return mergeItemStack(stack, size, size + 26, true);
         }
-        return prev;
+        return mergeItemStack(stack, 0, size, false);
+    }
+
+    @Override
+    public ItemStack transferStackInSlot(EntityPlayer player, int index) {
+        ItemStack stack = ItemStack.EMPTY;
+        Slot slot = inventorySlots.get(index);
+
+        if (slot != null && slot.getHasStack()) {
+            ItemStack stackInSlot = slot.getStack();
+            stack = stackInSlot.copy();
+
+            if (!performMerge(index, stackInSlot)) {
+                return ItemStack.EMPTY;
+            }
+            slot.onSlotChange(stackInSlot, stack);
+
+            if (stackInSlot.getCount() <= 0) {
+                slot.putStack(ItemStack.EMPTY);
+            } else {
+                slot.putStack(stackInSlot);
+            }
+            if (stackInSlot.getCount() == stack.getCount()) {
+                return ItemStack.EMPTY;
+            }
+            slot.onTake(player, stackInSlot);
+        }
+        return stack;
     }
 
     @Override
