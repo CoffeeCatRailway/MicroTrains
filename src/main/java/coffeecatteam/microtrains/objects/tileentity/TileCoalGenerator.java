@@ -1,7 +1,6 @@
 package coffeecatteam.microtrains.objects.tileentity;
 
 import coffeecatteam.microtrains.init.InitBlock;
-import cofh.core.energy.FurnaceFuelHandler;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -13,7 +12,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.tileentity.TileEntityFurnace;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.NonNullList;
@@ -23,6 +21,7 @@ import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.energy.CapabilityEnergy;
 import net.minecraftforge.energy.IEnergyStorage;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -139,7 +138,7 @@ public class TileCoalGenerator extends TileEntity implements IInventory, ITickab
 
     @Override
     public boolean isItemValidForSlot(int index, ItemStack stack) {
-        return FurnaceFuelHandler.INSTANCE.getBurnTime(stack) > 0;
+        return GameRegistry.getFuelValue(stack) > 0;
     }
 
     @Override

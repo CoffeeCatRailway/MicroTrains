@@ -4,7 +4,6 @@ import coffeecatteam.microtrains.init.InitBlock;
 import coffeecatteam.microtrains.proxy.ProxyCommon;
 import coffeecatteam.microtrains.util.GuiHandler;
 import coffeecatteam.microtrains.util.Utils;
-import cofh.redstoneflux.RedstoneFlux;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;
@@ -16,7 +15,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import org.apache.logging.log4j.Logger;
 
-@Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION, dependencies = RedstoneFlux.VERSION_GROUP)
+@Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION)
 public class MicroTrains {
 
     public static final CreativeTabs MICROTAB = new TabMicroTrains("microtab");
