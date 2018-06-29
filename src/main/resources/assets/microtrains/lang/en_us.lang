@@ -6,7 +6,7 @@ tile.table.name=Micro Rail Table
 tile.table.info=When placed next to another table they will connected. But they can only be in a square formation!
 
 tile.controller.name=Micro Rail Controller
-tile.controller.info=When placed with blue & red wires connected/facing a corner of a table it will detect how many tables there are and the GUI will adapt and will add more slots to place rails and/or scenery.
+tile.controller.info=When placed with the blue & red wires connected to a corner of a table it will detect how many tables there are and the GUI will adapt and will add more slots to place rails and/or scenery. §c§lMax of a 3x3 table!
 
 tile.coal_generator.name=Coal Generator
 tile.coal_generator.info=Burn coal to generate RF. 1 stack of coal will generate approx 130,000 RF.
