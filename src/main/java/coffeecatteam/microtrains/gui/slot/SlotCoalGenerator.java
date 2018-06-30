@@ -1,4 +1,4 @@
-package coffeecatteam.microtrains.gui;
+package coffeecatteam.microtrains.gui.slot;
 
 import net.minecraft.client.resources.I18n;
 import net.minecraft.inventory.IInventory;

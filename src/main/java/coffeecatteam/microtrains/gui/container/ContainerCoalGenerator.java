@@ -1,6 +1,6 @@
 package coffeecatteam.microtrains.gui.container;
 
-import coffeecatteam.microtrains.gui.SlotCoalGenerator;
+import coffeecatteam.microtrains.gui.slot.SlotCoalGenerator;
 import coffeecatteam.microtrains.objects.tileentity.TileCoalGenerator;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.Container;
