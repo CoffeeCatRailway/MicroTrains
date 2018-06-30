@@ -5,6 +5,7 @@ import coffeecatteam.microtrains.objects.blocks.BlockCoalGenerator;
 import coffeecatteam.microtrains.objects.blocks.BlockController;
 import coffeecatteam.microtrains.objects.blocks.BlockTable;
 import coffeecatteam.microtrains.objects.tileentity.TileCoalGenerator;
+import coffeecatteam.microtrains.objects.tileentity.TileController;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemSlab;
@@ -27,6 +28,7 @@ public class InitBlock {
 
 	public static void registerTileEntities() {
         GameRegistry.registerTileEntity(TileCoalGenerator.class, Reference.MODID+":coal_generator");
+        GameRegistry.registerTileEntity(TileController.class, Reference.MODID+":controller");
     }
 
     private static void register(Block... blocks) {
