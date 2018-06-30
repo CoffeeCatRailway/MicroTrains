@@ -3,6 +3,7 @@ package coffeecatteam.microtrains.gui;
 import coffeecatteam.microtrains.Reference;
 import coffeecatteam.microtrains.gui.container.ContainerCoalGenerator;
 import coffeecatteam.microtrains.objects.tileentity.TileCoalGenerator;
+import coffeecatteam.microtrains.util.Utils;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.inventory.IInventory;
@@ -61,7 +62,7 @@ public class GuiCoalGenerator extends GuiContainer {
             this.drawTexturedModalRect(this.guiLeft + 52, this.guiTop + 40 - k, 176, 12 - k, 14, k + 1);
         }
 
-        int l = getEnergyReading(37);
+        int l = Utils.getEnergyReading(37, this.generator.getField(2), this.generator.getField(3));
         this.drawTexturedModalRect(this.guiLeft + 84, this.guiTop + 63 - l, 176, 51 - l, 36, l + 1); // 38
     }
 
@@ -69,11 +70,5 @@ public class GuiCoalGenerator extends GuiContainer {
         if (this.generator.getField(0) == this.generator.getField(1))
             return -1;
         return this.generator.getField(0) * pixels / 100;
-    }
-
-    private int getEnergyReading(int pixels) {
-        if (this.generator.getField(2) == 0)
-            return -1;
-        return this.generator.getField(2) * pixels / this.generator.getField(3);
     }
 }

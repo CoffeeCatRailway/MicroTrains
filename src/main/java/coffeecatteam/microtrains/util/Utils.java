@@ -4,9 +4,6 @@ import coffeecatteam.microtrains.Reference;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.Calendar;
-import java.util.Date;
-
 public class Utils {
 
     private static Logger logger;
@@ -18,15 +15,9 @@ public class Utils {
         return logger;
     }
 
-    public static boolean isDate(int month, int day) {
-        Date today = new Date();
-        Calendar cal = Calendar.getInstance();
-        cal.setTime(today);
-
-        int curentMonth = cal.get(Calendar.MONTH);
-        int curentDay = cal.get(Calendar.DAY_OF_MONTH);
-        boolean inRange = curentDay == day;
-
-        return (curentMonth == month && inRange);
+    public static int getEnergyReading(int pixels, int currentEnergy, int maxEnergy) {
+        if (currentEnergy == 0)
+            return -1;
+        return currentEnergy * pixels / maxEnergy;
     }
 }
