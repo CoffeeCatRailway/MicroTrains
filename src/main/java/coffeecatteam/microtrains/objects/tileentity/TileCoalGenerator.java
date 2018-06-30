@@ -295,7 +295,7 @@ public class TileCoalGenerator extends TileEntity implements IInventory, ITickab
                     if (tile.hasCapability(CapabilityEnergy.ENERGY, facing.getOpposite())) {
                         IEnergyStorage storage = tile.getCapability(CapabilityEnergy.ENERGY, facing.getOpposite());
 
-                        if (storage != null) {
+                        if (storage != null && storage.getEnergyStored() != storage.getMaxEnergyStored()) {
                             int power = this.energyStorage.extractEnergy(this.energyStorage.getMaxExtract(), true);
                             int drained = storage.receiveEnergy(power, false);
                             this.energyStorage.extractEnergy(drained, false);
