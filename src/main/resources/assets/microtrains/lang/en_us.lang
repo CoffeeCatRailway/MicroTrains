@@ -2,14 +2,14 @@
 item.show_info=Hold %s for Info
 
 # Blocks
-tile.table.name=Micro Rail Table
+tile.table.name=Micro Rail Table §c§lWIP
 tile.table.info=When placed next to another table they will connected. But they can only be in a square formation!
 
-tile.controller.name=Micro Rail Controller
+tile.controller.name=Micro Rail Controller §c§lWIP
 tile.controller.info=When placed with the blue & red wires connected to a corner of a table it will detect how many tables there are and the GUI will adapt and will add more slots to place rails and/or scenery. §c§lMax of a 3x3 table!
 
-tile.coal_generator.name=Coal Generator
-tile.coal_generator.info=Burn coal to generate RF. 1 stack of coal will generate approx 130,000 RF. §c§lWIP
+tile.coal_generator.name=Coal Generator §c§lWIP
+tile.coal_generator.info=Burn coal to generate RF. 1 stack of coal will generate approx 130,000 RF.
 
 # Other
 itemGroup.microtab=Micro Trains
