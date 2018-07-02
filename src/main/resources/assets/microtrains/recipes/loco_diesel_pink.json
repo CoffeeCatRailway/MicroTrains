@@ -1,0 +1,18 @@
+{
+  "result": {
+    "item": "microtrains:loco_diesel_pink",
+    "data": 0
+  },
+  "group": "loco_diesel",
+  "ingredients": [
+    {
+      "type": "forge:ore_dict",
+      "ore": "loco_diesel"
+    },
+    {
+      "item": "minecraft:dye",
+      "data": 9
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}

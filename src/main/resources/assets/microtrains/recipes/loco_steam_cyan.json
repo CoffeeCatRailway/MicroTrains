@@ -1,0 +1,18 @@
+{
+  "result": {
+    "item": "microtrains:loco_steam_cyan",
+    "data": 0
+  },
+  "group": "loco_diesel",
+  "ingredients": [
+    {
+      "type": "forge:ore_dict",
+      "ore": "loco_steam"
+    },
+    {
+      "item": "minecraft:dye",
+      "data": 6
+    }
+  ],
+  "type": "minecraft:crafting_shapeless"
+}
