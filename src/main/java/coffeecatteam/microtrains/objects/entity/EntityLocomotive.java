@@ -1,6 +1,7 @@
 package coffeecatteam.microtrains.objects.entity;
 
 import coffeecatteam.microtrains.init.InitItem;
+import coffeecatteam.microtrains.objects.items.ItemLocomotive;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.item.EntityItemFrame;
@@ -32,10 +33,6 @@ public class EntityLocomotive extends EntityThrowable {
         return this;
     }
 
-    public Item getLoco() {
-        return this.loco;
-    }
-
     @Override
     protected float getGravityVelocity() {
         return 0.05f;
@@ -48,9 +45,24 @@ public class EntityLocomotive extends EntityThrowable {
             this.setDead();
 
             if (result.entityHit instanceof EntityItemFrame) {
-                EntityItem entityItem = new EntityItem(this.world, this.posX, this.posY, this.posZ, new ItemStack(loco));
-                this.world.spawnEntity(entityItem);
+                EntityItemFrame frame = (EntityItemFrame) result.entityHit;
+                if (frame.getDisplayedItem() == ItemStack.EMPTY)
+                    frame.setDisplayedItem(new ItemStack(this.loco));
+                else
+                    if (frame.getDisplayedItem().getItem() instanceof ItemLocomotive) {
+                        Item frameItem = frame.getDisplayedItem().getItem();
+                        frame.setDisplayedItem(new ItemStack(this.loco));
+                        doSpawnItem(frameItem);
+                    } else
+                        doSpawnItem(this.loco);
+            } else {
+                doSpawnItem(this.loco);
             }
         }
+    }
+
+    private void doSpawnItem(Item item) {
+        EntityItem entityItem = new EntityItem(this.world, this.posX, this.posY, this.posZ, new ItemStack(item));
+        this.world.spawnEntity(entityItem);
     }
 }
