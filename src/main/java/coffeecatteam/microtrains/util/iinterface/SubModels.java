@@ -1,4 +1,4 @@
-package coffeecatteam.microtrains.objects.items;
+package coffeecatteam.microtrains.util.iinterface;
 
 import net.minecraft.util.ResourceLocation;
 
