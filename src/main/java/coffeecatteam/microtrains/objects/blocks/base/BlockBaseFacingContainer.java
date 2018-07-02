@@ -1,6 +1,6 @@
 package coffeecatteam.microtrains.objects.blocks.base;
 
-import coffeecatteam.microtrains.MicroTrains;
+import coffeecatteam.microtrains.Tabs;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.material.Material;
@@ -40,7 +40,7 @@ public abstract class BlockBaseFacingContainer extends BlockContainer {
         setRegistryName(name);
         setHardness(hardness);
         setResistance(resistance);
-        setCreativeTab(MicroTrains.MICROTAB);
+        setCreativeTab(Tabs.MICROTAB_BLOCKS);
         this.setDefaultState(blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
     }
 

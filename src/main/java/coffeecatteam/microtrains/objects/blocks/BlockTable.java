@@ -1,6 +1,6 @@
 package coffeecatteam.microtrains.objects.blocks;
 
-import coffeecatteam.microtrains.MicroTrains;
+import coffeecatteam.microtrains.Tabs;
 import coffeecatteam.microtrains.objects.blocks.base.BlockBase;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -22,7 +22,7 @@ public class BlockTable extends BlockBase {
     public static final PropertyBool RIGHT = PropertyBool.create("right");
 
     public BlockTable(String name) {
-        super(name, 1.0F, 1.5F, Material.ROCK, MicroTrains.MICROTAB);
+        super(name, 1.0F, 1.5F, Material.ROCK, Tabs.MICROTAB_BLOCKS);
         this.setDefaultState(this.blockState.getBaseState().withProperty(BACK, false).withProperty(FORWARD, false).withProperty(LEFT, false).withProperty(RIGHT, false));
     }
 
