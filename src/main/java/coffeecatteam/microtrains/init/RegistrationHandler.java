@@ -1,17 +1,17 @@
 package coffeecatteam.microtrains.init;
 
 import coffeecatteam.microtrains.Reference;
-import coffeecatteam.microtrains.objects.items.SubModels;
+import coffeecatteam.microtrains.util.iinterface.IOreDict;
+import coffeecatteam.microtrains.util.iinterface.SubModels;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
-import net.minecraft.util.NonNullList;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.registries.IForgeRegistry;
 
 import java.util.HashSet;
@@ -51,7 +51,11 @@ public class RegistrationHandler {
 
         @SubscribeEvent
         public static void registerItems(RegistryEvent.Register<Item> event) {
-            ITEMS.forEach(item -> event.getRegistry().register(item));
+            for (Item item : ITEMS) {
+                event.getRegistry().register(item);
+                if (item instanceof IOreDict)
+                    OreDictionary.registerOre(((IOreDict) item).getOreDict(), item);
+            }
         }
 
         @SubscribeEvent

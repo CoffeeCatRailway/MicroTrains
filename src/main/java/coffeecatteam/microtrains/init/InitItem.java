@@ -15,8 +15,8 @@ public class InitItem {
     static {
         for(int i = 0; i < EnumDyeColor.values().length; i++) {
             String color = "_" + EnumDyeColor.byMetadata(i).getName();
-            LOCO_STEAMS[i] = new ItemLocomotive("loco_steam" + color);
-            LOCO_DIESELS[i] = new ItemLocomotive("loco_diesel" + color);
+            LOCO_STEAMS[i] = new ItemLocomotive("loco_steam" + color, "loco_steam");
+            LOCO_DIESELS[i] = new ItemLocomotive("loco_diesel" + color, "loco_diesel");
         }
     }
 
