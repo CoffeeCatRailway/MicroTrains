@@ -1,0 +1,7 @@
+{
+  "parent": "microtrains:share/item/diesel",
+  "textures": {
+    "body_second1": "minecraft:blocks/concrete_powder_lime",
+    "body_second2": "minecraft:blocks/concrete_lime"
+  }
+}

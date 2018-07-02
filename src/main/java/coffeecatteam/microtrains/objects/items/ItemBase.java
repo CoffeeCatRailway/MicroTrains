@@ -1,6 +1,6 @@
 package coffeecatteam.microtrains.objects.items;
 
-import coffeecatteam.microtrains.MicroTrains;
+import coffeecatteam.microtrains.Tabs;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
@@ -18,7 +18,7 @@ public class ItemBase extends Item {
     public ItemBase(String name) {
         setUnlocalizedName(name);
         setRegistryName(name);
-        setCreativeTab(MicroTrains.MICROTAB);
+        setCreativeTab(Tabs.MICROTAB_ROLLING_STOCK);
     }
 
     @Override

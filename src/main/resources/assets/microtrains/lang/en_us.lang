@@ -12,4 +12,6 @@ tile.coal_generator.name=Coal Generator §c§lWIP
 tile.coal_generator.info=Burn coal to generate RF. 1 stack of coal will generate approx 130,000 RF.
 
 # Other
-itemGroup.microtab=Micro Trains
+itemGroup.microtab_blocks=Micro Trains Blocks
+itemGroup.microtab_locos=Micro Trains Locomotives
+itemGroup.microtab_rolling_stock=Micro Trains Rolling Stock

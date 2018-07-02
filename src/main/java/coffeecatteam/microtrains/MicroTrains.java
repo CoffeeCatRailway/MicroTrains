@@ -1,10 +1,13 @@
 package coffeecatteam.microtrains;
 
 import coffeecatteam.microtrains.init.InitBlock;
+import coffeecatteam.microtrains.init.InitItem;
 import coffeecatteam.microtrains.proxy.ProxyCommon;
 import coffeecatteam.microtrains.util.GuiHandler;
 import coffeecatteam.microtrains.util.Utils;
+import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
@@ -15,10 +18,10 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import org.apache.logging.log4j.Logger;
 
+import java.util.Random;
+
 @Mod(modid = Reference.MODID, name = Reference.NAME, version = Reference.VERSION)
 public class MicroTrains {
-
-    public static final CreativeTabs MICROTAB = new TabMicroTrains("microtab");
 
     public static Logger logger = Utils.getLogger();
 
@@ -46,18 +49,5 @@ public class MicroTrains {
     public void postInit(FMLPostInitializationEvent event) {
         proxy.postInit(event);
         logger.info("Post Initialize");
-    }
-
-    private static class TabMicroTrains extends CreativeTabs {
-
-        public TabMicroTrains(String label) {
-            super(label);
-            this.setBackgroundImageName("micro.png");
-            this.setNoTitle();
-        }
-
-        public ItemStack getTabIconItem() {
-            return new ItemStack(InitBlock.TABLE);
-        }
     }
 }

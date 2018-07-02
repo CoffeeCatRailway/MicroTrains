@@ -1,6 +1,8 @@
 package coffeecatteam.microtrains.init;
 
 import coffeecatteam.microtrains.objects.items.ItemBase;
+import coffeecatteam.microtrains.objects.items.ItemLocomotive;
+import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
 
 public class InitItem {
@@ -8,8 +10,15 @@ public class InitItem {
     /*
      * Locomotives
      */
-    public static final Item LOCO_STEAM = new ItemBase("loco_steam");
-    public static final Item LOCO_DIESEL = new ItemBase("loco_diesel");
+    public static final Item[] LOCO_STEAMS = new Item[EnumDyeColor.values().length];
+    public static final Item[] LOCO_DIESELS = new Item[EnumDyeColor.values().length];
+    static {
+        for(int i = 0; i < EnumDyeColor.values().length; i++) {
+            String color = "_" + EnumDyeColor.byMetadata(i).getName();
+            LOCO_STEAMS[i] = new ItemLocomotive("loco_steam" + color);
+            LOCO_DIESELS[i] = new ItemLocomotive("loco_diesel" + color);
+        }
+    }
 
     /*
      * Rolling Stock
@@ -21,7 +30,8 @@ public class InitItem {
         /*
          * Locomotives
          */
-        register(LOCO_STEAM, LOCO_DIESEL);
+        register(LOCO_STEAMS);
+        register(LOCO_DIESELS);
 
         /*
          * Rolling Stock

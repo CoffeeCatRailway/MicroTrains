@@ -1,0 +1,6 @@
+{
+  "parent": "microtrains:share/item/steam",
+  "textures": {
+    "base": "minecraft:blocks/concrete_purple"
+  }
+}
