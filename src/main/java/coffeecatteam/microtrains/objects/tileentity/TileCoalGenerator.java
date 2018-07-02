@@ -213,6 +213,7 @@ public class TileCoalGenerator extends TileEntity implements IInventory, ITickab
                 this.energyStorage.setCapacity(value);
                 break;
         }
+        this.markDirty();
     }
 
     @Override

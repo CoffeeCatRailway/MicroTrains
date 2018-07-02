@@ -184,6 +184,7 @@ public class TileController extends TileEntity implements IInventory, ITickable 
                 this.energyStorage.setCapacity(value);
                 break;
         }
+        this.markDirty();
     }
 
     @Override
