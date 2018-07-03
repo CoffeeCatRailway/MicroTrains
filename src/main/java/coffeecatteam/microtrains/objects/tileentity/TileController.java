@@ -2,29 +2,20 @@ package coffeecatteam.microtrains.objects.tileentity;
 
 import coffeecatteam.microtrains.init.InitBlock;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.inventory.IInventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentTranslation;
-import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.energy.CapabilityEnergy;
 
-import javax.annotation.Nullable;
+public class TileController extends TileEnergyBase implements ITickable {
 
-public class TileController extends TileEntity implements IInventory, ITickable {
-
-    private CGEnergyStorage energyStorage;
-
-    private NonNullList<ItemStack> inventory = NonNullList.<ItemStack>withSize(530, ItemStack.EMPTY);
+    private NonNullList<ItemStack> inventory = NonNullList.<ItemStack>withSize(1, ItemStack.EMPTY);
 
     public TileController() {
-        energyStorage = new CGEnergyStorage(5000, 50, 0, 0);
+        super(5000, 50, 0, 0);
     }
 
     @Override
@@ -144,8 +135,6 @@ public class TileController extends TileEntity implements IInventory, ITickable 
             }
         }
         compound.setTag("Items", list);
-        compound.setInteger("energyStored", this.energyStorage.getEnergyStored());
-
         return super.writeToNBT(compound);
     }
 
@@ -157,57 +146,15 @@ public class TileController extends TileEntity implements IInventory, ITickable 
             int slot = stackTag.getByte("Slot") & 255;
             setInventorySlotContents(slot, new ItemStack(stackTag));
         }
-        this.energyStorage.setEnergy(compound.getInteger("energyStored"));
-
         super.readFromNBT(compound);
     }
 
     @Override
-    public int getField(int id) {
-        switch (id) {
-            case 0:
-                return this.energyStorage.getEnergyStored();
-            case 1:
-                return this.energyStorage.getMaxEnergyStored();
-            default:
-                return 0;
-        }
-    }
-
-    @Override
-    public void setField(int id, int value) {
-        switch (id) {
-            case 0:
-                this.energyStorage.setEnergy(value);;
-                break;
-            case 1:
-                this.energyStorage.setCapacity(value);
-                break;
-        }
-        this.markDirty();
-    }
-
-    @Override
-    public int getFieldCount() {
-        return 2;
-    }
-
-    @Override
     public void update() {
-    }
-
-    @Override
-    public boolean hasCapability(Capability<?> capability, @Nullable EnumFacing facing) {
-        if(capability == CapabilityEnergy.ENERGY)
-            return true;
-        return super.hasCapability(capability, facing);
-    }
-
-    @Override
-    @Nullable
-    public <T> T getCapability(Capability<T> capability, @Nullable EnumFacing facing) {
-        if(capability == CapabilityEnergy.ENERGY)
-            return (T) this.energyStorage;
-        return super.getCapability(capability, facing);
+        if(this.world != null) {
+            if (!this.energyStorage.isFull())
+                this.receiveEnergy();
+            this.markDirty();
+        }
     }
 }

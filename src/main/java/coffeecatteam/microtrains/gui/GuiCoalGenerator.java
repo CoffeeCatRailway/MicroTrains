@@ -46,7 +46,7 @@ public class GuiCoalGenerator extends GuiContainer {
 
         if(mouseX >= this.guiLeft + 84 && mouseX <= this.guiLeft + 119 && mouseY >= this.guiTop + 26 && mouseY <= this.guiTop + 63) {
             List<String> text = new ArrayList<>();
-            text.add(this.generator.getField(2) + "RF / " + this.generator.getField(3) + "RF");
+            text.add(this.generator.getField(0) + "RF / " + this.generator.getField(1) + "RF");
             this.drawHoveringText(text, mouseX - this.guiLeft, mouseY - this.guiTop);
         }
     }
@@ -62,13 +62,13 @@ public class GuiCoalGenerator extends GuiContainer {
             this.drawTexturedModalRect(this.guiLeft + 52, this.guiTop + 40 - k, 176, 12 - k, 14, k + 1);
         }
 
-        int l = Utils.getEnergyReading(37, this.generator.getField(2), this.generator.getField(3));
+        int l = Utils.getEnergyReading(37, this.generator.getField(0), this.generator.getField(1));
         this.drawTexturedModalRect(this.guiLeft + 84, this.guiTop + 63 - l, 176, 51 - l, 36, l + 1); // 38
     }
 
     private int getBurnTime(int pixels) {
-        if (this.generator.getField(0) == this.generator.getField(1))
+        if (this.generator.getField(2) == this.generator.getField(3))
             return -1;
-        return this.generator.getField(0) * pixels / 100;
+        return this.generator.getField(2) * pixels / 100;
     }
 }

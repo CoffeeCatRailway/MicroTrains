@@ -11,25 +11,15 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.nbt.NBTTagList;
-import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.NonNullList;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentTranslation;
-import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.energy.CapabilityEnergy;
-import net.minecraftforge.energy.IEnergyStorage;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-import javax.annotation.Nullable;
-
-public class TileCoalGenerator extends TileEntity implements IInventory, ITickable {
-
-    private CGEnergyStorage energyStorage;
+public class TileCoalGenerator extends TileEnergyBase implements ITickable {
 
     private int maxCooldown = 100;
     private int cooldown = maxCooldown;
@@ -39,7 +29,7 @@ public class TileCoalGenerator extends TileEntity implements IInventory, ITickab
     private NonNullList<ItemStack> inventory = NonNullList.<ItemStack>withSize(1, ItemStack.EMPTY);
 
     public TileCoalGenerator() {
-        energyStorage = new CGEnergyStorage(100000, 0, 50, 0);
+        super(100000, 0, 50, 0, 2);
     }
 
     @Override
@@ -160,9 +150,7 @@ public class TileCoalGenerator extends TileEntity implements IInventory, ITickab
         }
         compound.setTag("Items", list);
         compound.setInteger("cooldown", this.cooldown);
-        compound.setInteger("energyStored", this.energyStorage.getEnergyStored());
         compound.setBoolean("burn", this.burn);
-
         return super.writeToNBT(compound);
     }
 
@@ -175,50 +163,34 @@ public class TileCoalGenerator extends TileEntity implements IInventory, ITickab
             setInventorySlotContents(slot, new ItemStack(stackTag));
         }
         this.cooldown = compound.getInteger("cooldown");
-        this.energyStorage.setEnergy(compound.getInteger("energyStored"));
         this.burn = compound.getBoolean("burn");
-
         super.readFromNBT(compound);
     }
 
     @Override
     public int getField(int id) {
         switch (id) {
-            case 0:
-                return this.cooldown;
-            case 1:
-                return this.maxCooldown;
             case 2:
-                return this.energyStorage.getEnergyStored();
+                return this.cooldown;
             case 3:
-                return this.energyStorage.getMaxEnergyStored();
+                return this.maxCooldown;
             default:
-                return 0;
+                return super.getField(id);
         }
     }
 
     @Override
     public void setField(int id, int value) {
+        super.setField(id, value);
         switch (id) {
-            case 0:
+            case 2:
                 this.cooldown = value;
                 break;
-            case 1:
-                this.maxCooldown = value;
-                break;
-            case 2:
-                this.energyStorage.setEnergy(value);;
-                break;
             case 3:
-                this.energyStorage.setCapacity(value);
+                this.maxCooldown = value;
                 break;
         }
         this.markDirty();
-    }
-
-    @Override
-    public int getFieldCount() {
-        return 4;
     }
 
     @Override
@@ -253,7 +225,7 @@ public class TileCoalGenerator extends TileEntity implements IInventory, ITickab
 
             // Output energy if stored energy is greater then 0
             if (this.energyStorage.getEnergyStored() > 0)
-                outputEnergy();
+                this.outputEnergy();
 
             this.markDirty();
         }
@@ -284,41 +256,5 @@ public class TileCoalGenerator extends TileEntity implements IInventory, ITickab
             return 200;
 
         return 100;
-    }
-
-    private void outputEnergy() {
-        for (EnumFacing facing : EnumFacing.values()) {
-            BlockPos pos = getPos().offset(facing);
-            if (world.isBlockLoaded(pos)) {
-                TileEntity tile = world.getTileEntity(pos);
-
-                if (tile != null) {
-                    if (tile.hasCapability(CapabilityEnergy.ENERGY, facing.getOpposite())) {
-                        IEnergyStorage storage = tile.getCapability(CapabilityEnergy.ENERGY, facing.getOpposite());
-
-                        if (storage != null && storage.getEnergyStored() != storage.getMaxEnergyStored()) {
-                            int power = this.energyStorage.extractEnergy(this.energyStorage.getMaxExtract(), true);
-                            int drained = storage.receiveEnergy(power, false);
-                            this.energyStorage.extractEnergy(drained, false);
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    @Override
-    public boolean hasCapability(Capability<?> capability, @Nullable EnumFacing facing) {
-        if(capability == CapabilityEnergy.ENERGY)
-            return true;
-        return super.hasCapability(capability, facing);
-    }
-
-    @Override
-    @Nullable
-    public <T> T getCapability(Capability<T> capability, @Nullable EnumFacing facing) {
-        if(capability == CapabilityEnergy.ENERGY)
-            return (T) this.energyStorage;
-        return super.getCapability(capability, facing);
     }
 }
