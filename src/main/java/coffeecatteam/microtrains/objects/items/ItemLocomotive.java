@@ -71,7 +71,7 @@ public class ItemLocomotive extends Item implements SubModels, IOreDict {
     @Override
     public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
         if (GuiScreen.isShiftKeyDown()) {
-            String info = I18n.format(this.getOreDict() + ".info");
+            String info = I18n.format("item." + this.getOreDict() + ".info");
             tooltip.addAll(Minecraft.getMinecraft().fontRenderer.listFormattedStringToWidth(info, 150));
         } else {
             tooltip.add(TextFormatting.YELLOW + I18n.format("item.show_info", "SHIFT"));
