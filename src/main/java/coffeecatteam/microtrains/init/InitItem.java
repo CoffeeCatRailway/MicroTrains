@@ -2,6 +2,7 @@ package coffeecatteam.microtrains.init;
 
 import coffeecatteam.microtrains.objects.items.ItemBase;
 import coffeecatteam.microtrains.objects.items.ItemLocomotive;
+import coffeecatteam.microtrains.objects.items.ItemRollingStock;
 import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
 
@@ -23,8 +24,13 @@ public class InitItem {
     /*
      * Rolling Stock
      */
-    public static final Item STOCK_CABOOSE = new ItemBase("stock_caboose");
-    public static final Item STOCK_COACH = new ItemBase("stock_coach");
+    public static final Item STOCK_CABOOSE = new ItemRollingStock("caboose");
+    public static final Item STOCK_COACH = new ItemRollingStock("coach");
+
+    /*
+     * Other
+     */
+    public static final Item MICRO_RAIL = new ItemBase("micro_rail");
 
 	public static void init() {
         /*
@@ -38,6 +44,11 @@ public class InitItem {
          */
         register(STOCK_CABOOSE);
         register(STOCK_COACH);
+
+        /*
+         * Other
+         */
+        register(MICRO_RAIL);
 	}
 
     private static void register(Item... items) {
