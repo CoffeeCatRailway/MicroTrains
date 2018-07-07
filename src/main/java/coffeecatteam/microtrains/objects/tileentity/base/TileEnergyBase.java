@@ -1,6 +1,6 @@
-package coffeecatteam.microtrains.objects.tileentity;
+package coffeecatteam.microtrains.objects.tileentity.base;
 
-import net.minecraft.inventory.IInventory;
+import coffeecatteam.microtrains.objects.tileentity.CGEnergyStorage;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
@@ -11,48 +11,12 @@ import net.minecraftforge.energy.IEnergyStorage;
 
 import javax.annotation.Nullable;
 
-public abstract class TileEnergyBase extends TileEntity implements IInventory {
+public abstract class TileEnergyBase extends TileEntity {
 
     protected CGEnergyStorage energyStorage;
-    private int extraFieldCount;
 
     public TileEnergyBase(int capacity, int maxReceive, int maxExtract, int energy) {
-        this(capacity, maxReceive, maxExtract, energy, 0);
-    }
-
-    public TileEnergyBase(int capacity, int maxReceive, int maxExtract, int energy, int extraFieldCount) {
         this.energyStorage = new CGEnergyStorage(capacity, maxReceive, maxExtract, energy);
-        this.extraFieldCount = extraFieldCount;
-    }
-
-    @Override
-    public int getField(int id) {
-        switch (id) {
-            case 0:
-                return this.energyStorage.getEnergyStored();
-            case 1:
-                return this.energyStorage.getMaxEnergyStored();
-            default:
-                return 0;
-        }
-    }
-
-    @Override
-    public void setField(int id, int value) {
-        switch (id) {
-            case 0:
-                this.energyStorage.setEnergy(value);
-                break;
-            case 1:
-                this.energyStorage.setCapacity(value);
-                break;
-        }
-        this.markDirty();
-    }
-
-    @Override
-    public int getFieldCount() {
-        return 2 + this.extraFieldCount;
     }
 
     @Override
@@ -98,7 +62,7 @@ public abstract class TileEnergyBase extends TileEntity implements IInventory {
                     if (tile.hasCapability(CapabilityEnergy.ENERGY, facing.getOpposite())) {
                         IEnergyStorage storage = tile.getCapability(CapabilityEnergy.ENERGY, facing.getOpposite());
 
-                        if (storage != null && storage.getEnergyStored() != storage.getMaxEnergyStored()) {
+                        if (storage != null && this.energyStorage.getEnergyStored() != this.energyStorage.getMaxEnergyStored()) {
                             int power = this.energyStorage.receiveEnergy(this.energyStorage.getMaxReceive(), true);
                             int drained = storage.extractEnergy(power, false);
                             this.energyStorage.receiveEnergy(drained, false);
