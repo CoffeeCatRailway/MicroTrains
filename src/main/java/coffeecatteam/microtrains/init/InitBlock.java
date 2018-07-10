@@ -1,10 +1,8 @@
 package coffeecatteam.microtrains.init;
 
 import coffeecatteam.microtrains.Reference;
-import coffeecatteam.microtrains.objects.blocks.BlockCoalGenerator;
 import coffeecatteam.microtrains.objects.blocks.BlockController;
 import coffeecatteam.microtrains.objects.blocks.BlockTable;
-import coffeecatteam.microtrains.objects.tileentity.TileCoalGenerator;
 import coffeecatteam.microtrains.objects.tileentity.TileController;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlock;
@@ -17,17 +15,12 @@ public class InitBlock {
     public static final Block TABLE = new BlockTable("table");
     public static final Block CONTROLLER = new BlockController("controller");
 
-    public static final Block COAL_GENERATOR = new BlockCoalGenerator("coal_generator");
-
 	public static void init() {
         register(TABLE);
         register(CONTROLLER);
-
-        register(COAL_GENERATOR);
 	}
 
 	public static void registerTileEntities() {
-        GameRegistry.registerTileEntity(TileCoalGenerator.class, Reference.MODID+":coal_generator");
         GameRegistry.registerTileEntity(TileController.class, Reference.MODID+":controller");
     }
 

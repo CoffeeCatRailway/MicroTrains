@@ -1,5 +1,6 @@
 package coffeecatteam.microtrains.objects.tileentity;
 
+import coffeecatteam.gen_o_rator.objects.tileentity.base.TileEnergyInvBase;
 import coffeecatteam.microtrains.init.InitBlock;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -10,7 +11,7 @@ import net.minecraft.util.NonNullList;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TextComponentTranslation;
 
-public class TileController extends TileEnergyBase implements ITickable {
+public class TileController extends TileEnergyInvBase implements ITickable {
 
     private NonNullList<ItemStack> inventory = NonNullList.<ItemStack>withSize(1, ItemStack.EMPTY);
 

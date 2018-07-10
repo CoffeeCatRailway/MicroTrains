@@ -14,10 +14,4 @@ public class Utils {
         }
         return logger;
     }
-
-    public static int getEnergyReading(int pixels, int currentEnergy, int maxEnergy) {
-        if (currentEnergy == 0)
-            return -1;
-        return currentEnergy * pixels / maxEnergy;
-    }
 }
