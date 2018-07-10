@@ -3,7 +3,7 @@
   "modid": "microtrains",
   "name": "Micro Trains",
   "description": "Adds miniature trains that you can control into minecraft!",
-  "version": "0.1",
+  "version": "0.1-alpha",
   "mcversion": "${mcversion}",
   "url": "",
   "authorList": [ "CoffeeCatTeam", "CoffeeCatRailway", "MinecraftDoodler" ],
